@@ -1,9 +1,9 @@
+import Login from "../../molecules/login/Login";
 function LoginOrganisms() {
     return (
         <div>
-            orgsnissss
+            <Login/>
         </div>
     );
 }
-
 export default LoginOrganisms;
