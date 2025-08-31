@@ -29,13 +29,13 @@ function LoginForm() {
                             <Label htmlFor={'email'} className={`flex items-start w-[530px] font-medium
                                 ${errors.email ? 'text-[#991B1B]' : 'text-black'}
                                 `}>Email</Label>
-                            <Field as={Input} type='email' name='email' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]
+                            <Field as={Input} type='email' name='email' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7] hover:border-[1px] hover:border-[#5C73DB]
                                 ${errors.email ? 'border-[#F87171] placeholder:text-[#F87171]' : 'border-[#E4E4E7]'}
                                 `} placeholder={`${errors.email ? 'Adresse email ou numéro de téléphone' : "johndoe@gmail.com"}`} />
                             <Label htmlFor={'password'} className={`flex items-start w-[530px] font-medium
                                 ${errors.email ? 'text-[#991B1B]' : 'text-black'}
                                 `}>Mot de passe</Label>
-                            <Field as={Input} type='password' name='password' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]
+                            <Field as={Input} type='password' name='password' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7] hover:border-[1px] hover:border-[#5C73DB]
                                 ${errors.email ? "border-[#F87171] text-[#F87171]" : "border-[#E4E4E7]"}
                                 `} />
                         </div>
