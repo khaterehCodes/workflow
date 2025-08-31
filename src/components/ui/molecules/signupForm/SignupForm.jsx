@@ -34,7 +34,7 @@ function SignupForm() {
                     }
                 }}
             >
-                {({ isSubmitting, errors }) => (
+                {({ errors }) => (
                     <Form>
                         <div className="w-[530px] h-[430px] flex flex-col items-center gap-2">
                             <Label htmlFor={'email'} className={`flex items-start w-[530px] font-medium
