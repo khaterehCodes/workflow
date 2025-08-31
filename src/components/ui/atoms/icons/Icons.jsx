@@ -15,20 +15,20 @@ function Icons({ name }) {
             </svg>
         case 'dossier':
             return <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.5" d="M17 14.1C17 14.5243 16.8314 14.9313 16.5314 15.2314C16.2313 15.5314 15.8243 15.7 15.4 15.7H2.6C2.17565 15.7 1.76869 15.5314 1.46863 15.2314C1.16857 14.9313 1 14.5243 1 14.1V2.89999C1 2.47564 1.16857 2.06868 1.46863 1.76862C1.76869 1.46856 2.17565 1.29999 2.6 1.29999H6.6L8.2 3.69999H15.4C15.8243 3.69999 16.2313 3.86856 16.5314 4.16862C16.8314 4.46867 17 4.87564 17 5.29999V14.1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.5" d="M17 14.1C17 14.5243 16.8314 14.9313 16.5314 15.2314C16.2313 15.5314 15.8243 15.7 15.4 15.7H2.6C2.17565 15.7 1.76869 15.5314 1.46863 15.2314C1.16857 14.9313 1 14.5243 1 14.1V2.89999C1 2.47564 1.16857 2.06868 1.46863 1.76862C1.76869 1.46856 2.17565 1.29999 2.6 1.29999H6.6L8.2 3.69999H15.4C15.8243 3.69999 16.2313 3.86856 16.5314 4.16862C16.8314 4.46867 17 4.87564 17 5.29999V14.1Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
         case 'projet':
             return <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.5">
-                    <path d="M9.75 1.75H2.75C2.28587 1.75 1.84075 1.93437 1.51256 2.26256C1.18437 2.59075 1 3.03587 1 3.5V17.5C1 17.9641 1.18437 18.4092 1.51256 18.7374C1.84075 19.0656 2.28587 19.25 2.75 19.25H13.25C13.7141 19.25 14.1592 19.0656 14.4874 18.7374C14.8156 18.4092 15 17.9641 15 17.5V7L9.75 1.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M9.75 1.75V7H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M11.5 11.375H4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M11.5 14.875H4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6.25 7.875H5.375H4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9.75 1.75H2.75C2.28587 1.75 1.84075 1.93437 1.51256 2.26256C1.18437 2.59075 1 3.03587 1 3.5V17.5C1 17.9641 1.18437 18.4092 1.51256 18.7374C1.84075 19.0656 2.28587 19.25 2.75 19.25H13.25C13.7141 19.25 14.1592 19.0656 14.4874 18.7374C14.8156 18.4092 15 17.9641 15 17.5V7L9.75 1.75Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9.75 1.75V7H15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M11.5 11.375H4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M11.5 14.875H4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M6.25 7.875H5.375H4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </g>
             </svg>
 
-        case 'direction ':
+        case 'direction':
             return <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.5">
                     <path d="M3.4 12.5H2.6C2.17565 12.5 1.76869 12.3314 1.46863 12.0314C1.16857 11.7313 1 11.3243 1 10.9V2.89999C1 2.47564 1.16857 2.06868 1.46863 1.76862C1.76869 1.46856 2.17565 1.29999 2.6 1.29999H15.4C15.8243 1.29999 16.2313 1.46856 16.5314 1.76862C16.8314 2.06868 17 2.47564 17 2.89999V10.9C17 11.3243 16.8314 11.7313 16.5314 12.0314C16.2313 12.3314 15.8243 12.5 15.4 12.5H14.6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -36,11 +36,12 @@ function Icons({ name }) {
                 </g>
             </svg>
 
+
         case 'protection':
             return <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.5">
-                    <path d="M2.6 1.29999H15.4C15.8243 1.29999 16.2313 1.46856 16.5314 1.76862C16.8314 2.06868 17 2.47564 17 2.89999V7.69999C17 9.82172 16.1571 11.8566 14.6569 13.3568C13.1566 14.8571 11.1217 15.7 9 15.7C7.94943 15.7 6.90914 15.4931 5.93853 15.091C4.96793 14.689 4.08601 14.0997 3.34315 13.3568C1.84285 11.8566 1 9.82172 1 7.69999V2.89999C1 2.47564 1.16857 2.06868 1.46863 1.76862C1.76869 1.46856 2.17565 1.29999 2.6 1.29999V1.29999Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M5.7998 6.89996L8.9998 10.1L12.1998 6.89996" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.6 1.29999H15.4C15.8243 1.29999 16.2313 1.46856 16.5314 1.76862C16.8314 2.06868 17 2.47564 17 2.89999V7.69999C17 9.82172 16.1571 11.8566 14.6569 13.3568C13.1566 14.8571 11.1217 15.7 9 15.7C7.94943 15.7 6.90914 15.4931 5.93853 15.091C4.96793 14.689 4.08601 14.0997 3.34315 13.3568C1.84285 11.8566 1 9.82172 1 7.69999V2.89999C1 2.47564 1.16857 2.06868 1.46863 1.76862C1.76869 1.46856 2.17565 1.29999 2.6 1.29999V1.29999Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5.7998 6.89996L8.9998 10.1L12.1998 6.89996" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </g>
             </svg>
         case 'up':
