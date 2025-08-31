@@ -6,8 +6,9 @@ import Input from "../../atoms/customInput/Input";
 import Button from "../../atoms/customButton/Button";
 import P from "../../atoms/customP/P";
 import Icons from "../../atoms/icons/Icons";
+import { Link } from "react-router-dom";
 const LoginSchema = Yup.object().shape({
-    email: Yup.string().email().required('Adresse email ou numéro de téléphone'),
+    email: Yup.string().email(),
     password: Yup.string().required('passsssssss')
 })
 function LoginForm() {
@@ -24,15 +25,25 @@ function LoginForm() {
             >
                 {({ isSubmitting }) => (
                     <Form>
-                        <Label htmlFor={'email'}>Email</Label>
-                        <Field as={Input} type='email' name='email' />
-                        <ErrorMessage name="email" />
-                        <Label htmlFor={'password'}>Mot de passe</Label>
-                        <Field as={Input} type='password' name='password' />
-                        <P>Mot de passe oublié ?</P>
-                        <div>
-                            <Button type='submit' disabled={isSubmitting}>Se connecter</Button>
-                            <Icons name={'loginArrowIcon'} />
+                        <div className="w-[550px] h-[160px] flex flex-col items-center justify-center gap-1">
+                            <Label htmlFor={'email'} className={'flex items-start w-[530px]'}>Email</Label>
+                            <Field as={Input} type='email' name='email' className="w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]" placeholder="johndoe@gmail.com" />
+                            <ErrorMessage name="email" />
+                            <Label htmlFor={'password'} className={'flex items-start w-[530px]'}>Mot de passe</Label>
+                            <Field as={Input} type='password' name='password' className="w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]" />
+                        </div>
+                        <div className="w-[550px] h-[130px] flex flex-col items-center justify-center gap-2">
+                            <P className={'font-medium'}>Mot de passe oublié ?</P>
+                            <Button type='submit' disabled={isSubmitting} className={'w-[530px] h-[50px] bg-[#4763E4] rounded-[12px] flex items-center justify-center gap-2 text-[18px] text-white'}>
+                                Se connecter
+                                <Icons name={'loginArrowIcon'} />
+                            </Button>
+                            <div className='w-[350px] h-[20px] flex items-center justify-center gap-1'>
+                                <P>Vous n’avez pas de compte ?</P>
+                                <Link to=''>
+                                    <P className={'text-[#8DA2FB]'}> Créer un compte</P>
+                                </Link>
+                            </div>
                         </div>
                     </Form>
                 )}
