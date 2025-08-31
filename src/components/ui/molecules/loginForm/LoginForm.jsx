@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
 import Label from "../../atoms/customLabel/Label";
@@ -8,8 +8,8 @@ import P from "../../atoms/customP/P";
 import Icons from "../../atoms/icons/Icons";
 import { Link } from "react-router-dom";
 const LoginSchema = Yup.object().shape({
-    email: Yup.string().email(),
-    password: Yup.string().required('passsssssss')
+    email: Yup.string().email().required(),
+    password: Yup.string()
 })
 function LoginForm() {
     const navigate = useNavigate()
@@ -23,14 +23,21 @@ function LoginForm() {
                     navigate('/')
                 }}
             >
-                {({ isSubmitting }) => (
+                {({ isSubmitting, errors }) => (
                     <Form>
                         <div className="w-[550px] h-[160px] flex flex-col items-center justify-center gap-1">
-                            <Label htmlFor={'email'} className={'flex items-start w-[530px]'}>Email</Label>
-                            <Field as={Input} type='email' name='email' className="w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]" placeholder="johndoe@gmail.com" />
-                            <ErrorMessage name="email" />
-                            <Label htmlFor={'password'} className={'flex items-start w-[530px]'}>Mot de passe</Label>
-                            <Field as={Input} type='password' name='password' className="w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]" />
+                            <Label htmlFor={'email'} className={`flex items-start w-[530px] font-medium
+                                ${errors.email ? 'text-[#991B1B]' : 'text-black'}
+                                `}>Email</Label>
+                            <Field as={Input} type='email' name='email' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]
+                                ${errors.email ? 'border-[#F87171] placeholder:text-[#F87171]' : 'border-[#E4E4E7]'}
+                                `} placeholder={`${errors.email ? 'Adresse email ou numéro de téléphone' : "johndoe@gmail.com"}`} />
+                            <Label htmlFor={'password'} className={`flex items-start w-[530px] font-medium
+                                ${errors.email ? 'text-[#991B1B]' : 'text-black'}
+                                `}>Mot de passe</Label>
+                            <Field as={Input} type='password' name='password' className={`w-[530px] h-[50px] rounded-[12px] outline-none p-4 border-[1px] border-[#E4E4E7]
+                                ${errors.email ? "border-[#F87171] text-[#F87171]" : "border-[#E4E4E7]"}
+                                `} />
                         </div>
                         <div className="w-[550px] h-[130px] flex flex-col items-center justify-center gap-2">
                             <P className={'font-medium'}>Mot de passe oublié ?</P>
