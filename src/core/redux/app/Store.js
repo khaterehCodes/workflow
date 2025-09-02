@@ -1,9 +1,11 @@
-function Store() {
-    return (
-        <div>
-            
-        </div>
-    );
-}
+// src/redux/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from "./userSlice";
 
-export default Store;
+const store = configureStore({
+  reducer: {
+    users: userReducer,
+  },
+});
+
+export default store;
