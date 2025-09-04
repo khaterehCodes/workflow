@@ -2,8 +2,15 @@ import P from "../../atoms/customP/P";
 import Input from "../../atoms/customInput/Input";
 import Icons from "../../atoms/icons/Icons";
 import Button from "../../atoms/customButton/Button";
+import { useNavigate } from "react-router-dom";
 
 function UserSearchBar() {
+  const navigate = useNavigate();
+
+  const handleAdd = () => {
+    navigate("/edituser");
+  };
+
   return (
     <div className="flex justify-center mt-10">
       <div className="flex flex-col items-start space-y-4 w-[1104px]">
@@ -19,7 +26,10 @@ function UserSearchBar() {
           />
         </div>
 
-        <Button className="bg-[#4763E4] h-[48px] w-[226px] text-[18px] font-light rounded-[10px] text-white flex items-center justify-center gap-x-2">
+        <Button
+          onClick={handleAdd}
+          className="bg-[#4763E4] h-[48px] w-[226px] text-[18px] font-light rounded-[10px] text-white flex items-center justify-center gap-x-2"
+        >
           Ajouter un utilisateur
           <Icons name="plus" />
         </Button>
