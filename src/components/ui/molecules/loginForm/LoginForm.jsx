@@ -41,7 +41,9 @@ function LoginForm() {
                                 placeholder='********************' />
                         </div>
                         <div className="w-[550px] h-[130px] flex flex-col items-center justify-center gap-2">
-                            <P className={'font-medium'}>Mot de passe oublié ?</P>
+                            <Link to='/resetEmail'>
+                                <P className={'font-medium'}>Mot de passe oublié ?</P>
+                            </Link>
                             <Button type='submit' disabled={isSubmitting} className={'w-[530px] h-[50px] bg-[#4763E4] rounded-[12px] flex items-center justify-center gap-2 text-[18px] text-white'}>
                                 Se connecter
                                 <Icons name={'loginArrowIcon'} />
