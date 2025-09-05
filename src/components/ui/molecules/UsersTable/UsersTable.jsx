@@ -1,16 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser } from "../../../../core/redux/feature/UserSlice";
 import { statusStyles } from "../../../../core/array/Array";
 import { useNavigate } from "react-router-dom";
+import UserPagination from "../UserPagination/UserPagination";
+import H2 from "../../atoms/customH2/H2";
+import Span from "../../atoms/customSpan/Span";
+import Button from "../../atoms/customButton/Button";
 
 function UserTable() {
-  const users = useSelector(state => state.users.list);
+  const users = useSelector((state) => state.users.list);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 5;
+  const totalPages = 10;
+
   useEffect(() => {
     if (!users.length) {
+      setCurrentPage(1);
     }
   }, [users]);
 
@@ -22,15 +31,18 @@ function UserTable() {
     navigate("/edituser", { state: { user } });
   };
 
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
   return (
     <div className="flex flex-col items-center mt-6">
       <div className="w-[1104px] mb-4 flex justify-between items-center">
-        <h2 className="text-3xl font-semibold">Liste des utilisateurs</h2>
-
+        <H2 className="text-3xl font-semibold">Liste des utilisateurs</H2>
       </div>
       <div className="min-w-[1104px] h-[700px] bg-white rounded-[12px] shadow pt-5 px-2 flex flex-col">
         <div className="flex-1 overflow-y-auto">
-          {users.length > 0 ? (
+          {currentUsers.length > 0 ? (
             <table className="w-full">
               <thead className="text-[#A1A1AA] text-[16px]">
                 <tr>
@@ -43,41 +55,54 @@ function UserTable() {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user, index) => (
+                {currentUsers.map((user, index) => (
                   <tr key={user.email} className="border-b hover:bg-gray-50">
                     <td className="px-6 py-6">{user.noms}</td>
                     <td className="px-6 py-6">{user.prenoms}</td>
                     <td className="px-6 py-4">{user.email}</td>
                     <td className="px-6 py-4">{user.telephone}</td>
                     <td className="px-6 py-4">
-                      <span
-                        className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${statusStyles[user.statut] || "text-gray-500 bg-gray-100"
-                          }`}
+                      <Span
+                        className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${
+                          statusStyles[user.statut] ||
+                          "text-gray-500 bg-gray-100"
+                        }`}
                       >
                         {user.statut}
-                      </span>
+                      </Span>
                     </td>
                     <td className="px-6 py-4 flex gap-2">
-                      <button
+                      <Button
                         onClick={() => handleEdit(user)}
                         className="w-[81px] text-[12px] font-medium border rounded-[10px] border-[#5C73DB] text-[#5C73DB] h-[31px]"
                       >
                         Modifier
-                      </button>
-                      <button
-                        onClick={() => handleDelete(index)}
+                      </Button>
+                      <Button
+                        onClick={() => handleDelete(indexOfFirstUser + index)}
                         className="bg-[#DC2626] font-medium text-[12px] w-[81px] rounded-[10px] h-[31px] text-white"
                       >
                         Supprimer
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           ) : (
-            <div className="text-center text-gray-500 mt-10">Aucun utilisateur à afficher.</div>
+            <div className="text-center text-gray-500 mt-10">
+              Aucun utilisateur à afficher.
+            </div>
           )}
+        </div>
+        <div className="mt-auto">
+          <UserPagination
+            totalUsers={users.length}
+            usersPerPage={usersPerPage}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPages={totalPages}
+          />
         </div>
       </div>
     </div>

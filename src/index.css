@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  @apply w-full border rounded px-3 py-2;
+}
+
+.input-disabled {
+  @apply bg-gray-100 cursor-not-allowed;
+}
+
+.label {
+  @apply block mb-1 font-medium;
+}
+
+.error {
+  @apply text-red-600 text-sm;
+}
+
+.button-submit {
+  @apply w-full py-2 rounded text-white font-bold;
+}
+
+.button-enabled {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.button-disabled {
+  @apply bg-gray-400 cursor-not-allowed;
+}
