@@ -1,8 +1,9 @@
+import ResetPassword from "../../molecules/resetPassword/ResetPassword";
 
 function ResetPasswordOrganisms() {
     return (
         <div>
-            kjf:ASj:XKNvXKNvDKNDK
+            <ResetPassword/>
         </div>
     );
 }
