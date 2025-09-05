@@ -4,8 +4,8 @@ import NewPassword from "../newPassword/NewPassword";
 
 function ResetPassword() {
     return (
-        <div className="w-full h-[95vh] bg-green-300 flex items-center justify-center">
-            <div className="w-[550px] h-[380px] bg-fuchsia-300 flex items-center justify-center gap-6 flex-col">
+        <div className="w-full h-[95vh]  flex items-center justify-center">
+            <div className="w-[550px] h-[380px] flex items-center justify-center gap-6 flex-col">
                 <div className='w-[430px] h-[80px] flex items-center justify-center flex-col'>
                     <div className='w-[200px] h-[45px] flex items-center justify-between'>
                         <Icons name={'logo'} />
