@@ -6,7 +6,7 @@ function Layout({ children }) {
   const location = useLocation();
   return (
     <>
-      {location.pathname === '/login' || location.pathname === '/signup' ? (<>
+      {location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/resetPassword' || location.pathname === '/resetEmail' || location.pathname==='/confirmEmail' ? (<>
         {children}
       </>) : (
         <div className="flex h-screen">
