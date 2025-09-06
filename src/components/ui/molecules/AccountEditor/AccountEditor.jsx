@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { addUser, updateUser } from "../../../../core/redux/feature/UserSlice";
-import useUserForm from "../../../../core/hooks/useUserForm";
+import useUserForm from "../../../../core/hooks/UseUserForm";
 import InputField from "../InputField/InputField";
 import { fields } from "../../../../core/array/Array";
 function EditUsersPage() {

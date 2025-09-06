@@ -5,7 +5,9 @@ const validationSchema = Yup.object({
   email: Yup.string().email("E-mail invalide").required("Requis"),
   noms: Yup.string().required("Requis"),
   prenoms: Yup.string().required("Requis"),
-  telephone: Yup.string().required("Requis"),
+  telephone: Yup.string()
+    .matches(/^\d{11}$/, "Le numéro doit contenir exactement 11 chiffres")
+    .required("Requis"),
   statut: Yup.string().oneOf(["Validé", "Actif", "Inactif"]).required("Requis"),
 });
 
