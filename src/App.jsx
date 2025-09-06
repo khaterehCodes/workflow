@@ -24,7 +24,6 @@ function App() {
           <Route path='/' element={<UserListPage/>}/>
           <Route path="/base" element={<BasePage />} />
           <Route path="/controle" element={<ControlePage />} />
-          <Route path='/edituser' element={<EditUsersPage/>}/>
           <Route path='/signup' element={<SignupPage/>}/>
           <Route path='/resetPassword' element={<ResetPasswordPage/>}/>
           <Route path='/resetEmail' element={<ResetEmailPage/>}/>

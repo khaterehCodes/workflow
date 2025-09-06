@@ -1,4 +1,4 @@
-export  const items = [
+export const items = [
     { name: "Utilisateurs", route: "/" },
     { name: "Base", route: "/base" },
     { name: "Contrôle", route: "/controle" },
@@ -7,7 +7,7 @@ export  const items = [
     { name: "Rôles", route: "/roles" },
     { name: "Préferences", route: "/preferences" },
     { name: "Calendrier", route: "/calendrier" },
-  ];
+];
 export const menuItems = [
     { icon: "dossier", label: "Dossier" },
     { icon: "projet", label: "Projet" },
@@ -25,7 +25,7 @@ export const statusStyles = {
     "Validé": "text-[#166534] bg-[#DCFCE7]",
     "Actif": "text-[#9A3412] bg-[#FFEDD5]",
     "Inactif": "text-[#991B1B] bg-[#FEE2E2]",
-    
+
 };
 export const fields = [
     { label: "Adresse e-mail", name: "email", type: "email" },
@@ -34,5 +34,11 @@ export const fields = [
     { label: "Prénom", name: "prenoms" },
     { label: "Date de création de compte", name: "dateCreation", type: "date" },
     { label: "Date de dernière connexion", name: "dateDerniereConnexion", type: "date" },
-  ];
-  
+];
+
+export const tabs = [
+    { id: 1, label: 'Société' },
+    { id: 2, label: 'Commissaires contrôleurs' },
+    { id: 3, label: 'CRCA' },
+    { id: 4, label: 'Paramètres de contrôle' },
+]
