@@ -5,12 +5,12 @@ import SideBarTitle from "../../molecules/SideBarTitle/SideBarTitle";
 
 function SideBar() {
   return (
-    <div className="w-[256px] h-[1200px] bg-[#0B1750] flex flex-col">
+    <div className="w-[256px] min-h-screen bg-[#0B1750] flex flex-col">
       <SideBarTitle />
-      <ConfigurationSideBar/>
-      <ItemsSideBar/>
-      <div className="mt-[400px]">
-      <SideBarProfile/>
+      <ConfigurationSideBar />
+      <ItemsSideBar />
+      <div className="mt-[480px] mb-4">
+        <SideBarProfile />
       </div>
     </div>
   );

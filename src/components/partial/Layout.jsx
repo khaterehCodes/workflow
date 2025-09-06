@@ -11,13 +11,13 @@ function Layout({ children }) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <div className="flex min-h-screen bg-[#F4F4F5]">
+      <SideBar />
 
-      <div className="flex flex-1 min-h-screen bg-[#F4F4F5] overflow-y-auto">
-        <SideBar />
+      <div className="flex-1 flex flex-col">
+        <Header />
 
-        <main className="flex-1 p-4">
+        <main className="flex-1 overflow-y-auto p-4">
           {children}
         </main>
       </div>
