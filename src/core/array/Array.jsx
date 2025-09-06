@@ -1,12 +1,13 @@
+
 export const items = [
-    "Utilisateurs",
-    "Base",
-    "Contrôle",
-    "Workflow",
-    "Alertes",
-    "Rôles",
-    "Préferences",
-    "Calendrier",
+  { name: "Utilisateurs", route: "/" },
+  { name: "Base", route: "/base" },
+  { name: "Contrôle", route: "/controle" },
+  { name: "Workflow", route: "/workflow" },
+  { name: "Alertes", route: "/alertes" },
+  { name: "Rôles", route: "/roles" },
+  { name: "Préferences", route: "/preferences" },
+  { name: "Calendrier", route: "/calendrier" },
 ];
 export const menuItems = [
     { icon: "dossier", label: "Dossier" },
@@ -25,6 +26,7 @@ export const statusStyles = {
     "Validé": "text-[#166534] bg-[#DCFCE7]",
     "Actif": "text-[#9A3412] bg-[#FFEDD5]",
     "Inactif": "text-[#991B1B] bg-[#FEE2E2]",
+    
 };
 export const fields = [
     { label: "Adresse e-mail", name: "email", type: "email" },

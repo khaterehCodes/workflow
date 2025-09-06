@@ -5,19 +5,7 @@ import SideBar from "../ui/organisms/SideBar/SideBar";
 function Layout({ children }) {
   const location = useLocation();
   return (
-<<<<<<< HEAD
-    <div className="flex h-screen">
-      <SideBar /> 
-      <div className="flex-1 flex flex-col">
-        <div className="h-[80px]">
-          <Header /> 
-        </div>
-        <main className="min-h-[1120px] overflow-auto bg-[#F4F4F5]">
-          {children} 
-        </main>
-      </div>
-    </div>
-=======
+
     <>
       {location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/resetPassword' || location.pathname === '/resetEmail' || location.pathname==='/confirmEmail' ? (<>
         {children}
@@ -33,7 +21,6 @@ function Layout({ children }) {
         </div>
       )}
     </>
->>>>>>> a29d3200b7293bb2a9da747085ce1a21209a4abf
   );
 }
 
