@@ -15,7 +15,6 @@ function App() {
       <Layout>
         <Routes>
           <Route path='/login' element={<LoginPage />} />
-          <Route index element={<UserListPage />} />
           <Route path='/edituser' element={<EditUsersPage />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/resetPassword' element={<ResetPasswordPage />} />
