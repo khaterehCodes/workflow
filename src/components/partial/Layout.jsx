@@ -4,23 +4,25 @@ import SideBar from "../ui/organisms/SideBar/SideBar";
 
 function Layout({ children }) {
   const location = useLocation();
-  return (
+  const authPages = ['/login', '/signup', '/resetPassword', '/resetEmail', '/confirmEmail'];
 
-    <>
-      {location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/resetPassword' || location.pathname === '/resetEmail' || location.pathname==='/confirmEmail' ? (<>
-        {children}
-      </>) : (
-        <div className="flex h-screen">
-          <SideBar />
-          <div className="flex-1 flex flex-col">
-            <Header />
-            <main className="flex-1 overflow-auto bg-[#F4F4F5]">
-              {children}
-            </main>
-          </div>
-        </div>
-      )}
-    </>
+  if (authPages.includes(location.pathname)) {
+    return <>{children}</>;
+  }
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+
+      <div className="flex flex-1 min-h-screen bg-[#F4F4F5] overflow-y-auto">
+        <SideBar />
+
+        <main className="flex-1 p-4">
+          {children}
+        </main>
+      </div>
+    </div>
   );
 }
+
 export default Layout;
