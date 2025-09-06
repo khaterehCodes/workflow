@@ -33,7 +33,7 @@ function ConfigurationSideBar() {
       {isOpen && (
         <div className="flex flex-col mt-2 space-y-1">
           {items.map((item, index) => {
-            const isActive = location.pathname === item.route;
+            const isActive = item.activePaths.some(path => location.pathname.startsWith(path));
             return (
               <Link key={index} to={item.route} className="no-underline">
                 <div
