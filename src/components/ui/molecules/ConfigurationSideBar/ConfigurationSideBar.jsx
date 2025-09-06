@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import P from "../../atoms/customP/P";
 import Span from "../../atoms/customSpan/Span";
 import { items } from "../../../../core/array/Array";
-
 function ConfigurationSideBar() {
   const [isOpen, setIsOpen] = useState(true);
   const location = useLocation();
@@ -33,12 +32,15 @@ function ConfigurationSideBar() {
       {isOpen && (
         <div className="flex flex-col mt-2 space-y-1">
           {items.map((item, index) => {
-            const isActive = item.activePaths.some(path => location.pathname.startsWith(path));
+            let isActive = location.pathname === item.route;
+            if (item.route === "/" && location.pathname === "/edituser") {
+              isActive = true;
+            }
             return (
               <Link key={index} to={item.route} className="no-underline">
                 <div
                   className={`cursor-pointer px-3 py-2 rounded-[10px] transition-colors 
-                    ${isActive ? "ml-7 w-[200px] bg-[#4256D0]" : "ml-7 w-[200px] hover:bg-white/5"}`}
+                  ${isActive ? "ml-7 w-[200px] bg-[#4256D0]" : "ml-7 w-[200px] hover:bg-white/5"}`}
                 >
                   <Span className="font-medium ml-5 text-[16px] text-white">{item.name}</Span>
                 </div>
