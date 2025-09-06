@@ -14,6 +14,13 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path='/login' element={<LoginPage />} />
+          <Route index element={<UserListPage />} />
+          <Route path='/edituser' element={<EditUsersPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/resetPassword' element={<ResetPasswordPage />} />
+          <Route path='/resetEmail' element={<ResetEmailPage />} />
+          <Route path='/confirmEmail' element={<ConfirmEmail />} />
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/' element={<UserListPage/>}/>
           <Route path="/base" element={<BasePage />} />
