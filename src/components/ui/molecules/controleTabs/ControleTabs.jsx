@@ -1,6 +1,7 @@
 import { useState } from "react";
 import H1 from "../../atoms/customH1/H1";
 import TabBar from "../tabBar/TabBar";
+import Société from "../société/Société";
 
 function ControleTabs() {
     const [IsTab,setIsTab]=useState(1)
@@ -10,7 +11,7 @@ function ControleTabs() {
             <H1 className={'text-[32px] font-bold'}>Contrôle</H1>
             <TabBar IsTab={IsTab} setIsTab={setIsTab}/>
         </div>
-            {IsTab===1 && (<div>gggggggggggggg</div>)}
+            {IsTab===1 && (<><Société/></>)}
         </>
     );
 }
