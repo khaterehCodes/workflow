@@ -1,13 +1,14 @@
-export  const items = [
-    { name: "Utilisateurs", route: "/" },
-    { name: "Base", route: "/base" },
-    { name: "Contrôle", route: "/controle" },
-    { name: "Workflow", route: "/workflow" },
-    { name: "Alertes", route: "/alertes" },
-    { name: "Rôles", route: "/roles" },
-    { name: "Préferences", route: "/preferences" },
-    { name: "Calendrier", route: "/calendrier" },
+export const items = [
+    { name: "Utilisateurs", route: "/", paths: ["/", "/edituser", "/userdetails"] },
+    { name: "Base", route: "/base", paths: ["/base"] },
+    { name: "Contrôle", route: "/controle", paths: ["/controle"] },
+    { name: "Workflow", route: "/workflow", paths: ["/workflow"] },
+    { name: "Alertes", route: "/alertes", paths: ["/alertes"] },
+    { name: "Rôles", route: "/roles", paths: ["/roles"] },
+    { name: "Préferences", route: "/preferences", paths: ["/preferences"] },
+    { name: "Calendrier", route: "/calendrier", paths: ["/calendrier"] },
   ];
+  
 export const menuItems = [
     { icon: "dossier", label: "Dossier" },
     { icon: "projet", label: "Projet" },

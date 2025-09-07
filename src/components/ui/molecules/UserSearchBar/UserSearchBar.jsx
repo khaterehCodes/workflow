@@ -26,10 +26,8 @@ function UserSearchBar() {
           />
         </div>
 
-        <Button
-          onClick={handleAdd}
-          className="bg-[#4763E4] h-[48px] w-[226px] text-[18px] font-light rounded-[10px] text-white flex items-center justify-center gap-x-2"
-        >
+        <Button onClick={handleAdd}
+          className="bg-[#4763E4] h-[48px] w-[226px] text-[18px] font-light rounded-[10px] text-white flex items-center justify-center gap-x-2">
           Ajouter un utilisateur
           <Icons name="plus" />
         </Button>

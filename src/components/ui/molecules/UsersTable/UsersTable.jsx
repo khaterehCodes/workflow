@@ -75,8 +75,7 @@ function UserTable() {
             totalPages={totalPages}
             pages={pages}
             prevPage={prevPage}
-            nextPage={nextPage}
-          />
+            nextPage={nextPage}/>
         </div>
       </div>
     </div>
