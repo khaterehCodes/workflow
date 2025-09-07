@@ -59,4 +59,20 @@ export const SociétéTabs=[
 export const SociétéUsers=[
     {id:1,name:'Sit.',country:'Cameroun',city:'Douala',branch:'VIE',email:'contact@sit.cm',phone:'(+237) 233-333-333',web:'www.gropamai.cm',company:'Phasellus aliquet ac sed.',number:'02'},
     {id:2,name:'Augue.',country:'Eget.',city:'Proin eu eget.',branch:'NON VIE',email:'contacts@auguep.com',phone:'(+241) 033-333-333',web:'www.khm-group.com',company:'Ornare id malesuada.',number:'13'},
-]
+];
+
+export const countries=[
+    'Cameroun',
+    'Eget',
+    'France',
+];
+
+export const activeStatus=[
+    'NON VIE',
+    'VIE',
+];
+
+export const cities=[
+    'Douala',
+    'Proin',
+];
