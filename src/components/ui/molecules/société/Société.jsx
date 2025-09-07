@@ -35,7 +35,7 @@ function Société() {
                 ))}
             </div>
                 <SociétéUser />
-            </>) : (<>nooooooooo</>)}
+            </>) : (<>Aucun utilisateur à afficher</>)}
             <div className='w-[1200px] h-[40px] flex items-center justify-between absolute top-[820px]'>
                 <H2 className={'text-[#4763E4]'}>
                     {formatCount}&nbsp;

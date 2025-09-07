@@ -38,8 +38,11 @@ function SociétéUser() {
                             {item.number}
                         </div>
                         <div className='w-[97px] h-[50px] flex items-center justify-center gap-1'>
-                            <div onClick={() => dispatch(removeUser(item.id))} className='cursor-pointer'>
+                            <div onClick={() => dispatch(removeUser(item.id))} className='cursor-pointer group relative'>
                                 <Icons name={'removeIcon'} />
+                                <div className='absolute top-[110%] left-[-100%] -translate-x-1/2 hidden group-hover:flex items-center justify-center'>
+                                    <Icons name={'removeHover'}/>
+                                </div>
                             </div>
                             <div onClick={() => onEdit(item)} className='cursor-pointer'>
                                 <Icons name={'editIcon'} />
