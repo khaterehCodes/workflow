@@ -1,23 +1,31 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { deleteUser } from "../../../../core/redux/feature/UserSlice";
 import { statusStyles } from "../../../../core/array/Array";
-import { useNavigate } from "react-router-dom";
 import UserPagination from "../UserPagination/UserPagination";
 import H2 from "../../atoms/customH2/H2";
 import Span from "../../atoms/customSpan/Span";
 import Button from "../../atoms/customButton/Button";
 import { usePagination } from "../../../../core/hooks/UsePagination/UsePagination";
-function UserTable() {
-  const users = useSelector(state => state.users.list);
+
+function UsersTable({ users }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { currentPage, setCurrentPage, totalPages, pages, prevPage, nextPage, getVisibleUsers } = usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
+  const {
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    pages,
+    prevPage,
+    nextPage,
+    getVisibleUsers,
+  } = usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
+
   const visibleUsers = getVisibleUsers(users);
-  
-  const handleDelete = (index) => dispatch(deleteUser(index));
-  const handleEdit = (user) => navigate("/edituser", { state: { user } });
+
+  const handleDelete = index => dispatch(deleteUser(index));
+  const handleEdit = user => navigate("/edituser", { state: { user } });
 
   return (
     <div className="flex flex-col items-center mt-6">
@@ -63,7 +71,9 @@ function UserTable() {
               </tbody>
             </table>
           ) : (
-            <div className="text-center text-gray-500 mt-10">Aucun utilisateur à afficher.</div>
+            <div className="text-center text-gray-500 mt-10">
+              Aucun utilisateur à afficher.
+            </div>
           )}
         </div>
         <div className="mt-auto">
@@ -75,11 +85,12 @@ function UserTable() {
             totalPages={totalPages}
             pages={pages}
             prevPage={prevPage}
-            nextPage={nextPage}/>
+            nextPage={nextPage}
+          />
         </div>
       </div>
     </div>
   );
 }
 
-export default UserTable;
+export default UsersTable;
