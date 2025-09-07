@@ -7,7 +7,7 @@ import UserPagination from "../UserPagination/UserPagination";
 import H2 from "../../atoms/customH2/H2";
 import Span from "../../atoms/customSpan/Span";
 import Button from "../../atoms/customButton/Button";
-import { usePagination } from "../../../../core/hooks/usePagination";
+import { usePagination } from "../../../../core/hooks/UsePagination/UsePagination";
 function UserTable() {
   const users = useSelector(state => state.users.list);
   const dispatch = useDispatch();
