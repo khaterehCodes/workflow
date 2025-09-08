@@ -112,4 +112,14 @@ export const CRCAtab = [
 export const CRCAitem = [
     { id: 1, name: 'Foley', lastName: 'Alexander', phone: '(+237) 233-333-333', email: 'contact@gropamai.cm', date: '2018-06-23', number: '.' },
     { id: 2, name: 'DOE', lastName: 'John', phone: '(+241) 033-333-333', email: 'contacts@khm-group.com', date: '2018-06-23', number: '.' },
-]
+];
+
+export const controlSettingTabs = [
+    'Libellé',
+    'Description',
+    'Actions',
+];
+
+export const controleArray = [
+    { id: 1, label: 'Brigade test #1', description: '.' }
+];
