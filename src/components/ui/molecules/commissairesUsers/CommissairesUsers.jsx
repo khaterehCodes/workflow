@@ -20,7 +20,7 @@ function CommissairesUsers() {
                             {item.identity}
                         </div>
                         <div className='w-[108px] h-[50px]'>
-                            {item.birth}
+                            {new Date(item.birth).toLocaleDateString('fr-FR')}
                         </div>
                         <div className='w-[108px] h-[50px] break-words whitespace-normal'>
                             {item.area}

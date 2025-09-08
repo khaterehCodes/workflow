@@ -92,4 +92,9 @@ export const commissairesTab = [
 export const commissairesUsers = [
     { id: 1, name: 'Foley', lastName: 'Alexander', identity: '101010101010101010', birth: '2018-06-23', area: 'CAM LT05', email: 'contact@gropamai.cm', web: 'www.domaine.cm', phone: '(+237) 233-333-333' },
     { id: 2, name: 'DOE', lastName: 'John', identity: '101010101010101010', birth: '2018-06-23', area: 'CAM LT05', email: 'contacts@khm-group.com', web: 'www.domaine.cm', phone: '(+241) 033-333-333' },
+];
+
+export const area=[
+    'CAM LT05',
+    'CAM LT0576',
 ]
