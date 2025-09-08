@@ -43,7 +43,7 @@ export const tabs = [
     { id: 4, label: 'Paramètres de contrôle' },
 ];
 
-export const SociétéTabs=[
+export const SociétéTabs = [
     'Sociétés',
     'Pays',
     'Villes',
@@ -56,23 +56,40 @@ export const SociétéTabs=[
     'Actions',
 ];
 
-export const SociétéUsers=[
-    {id:1,name:'Sit.',country:'Cameroun',city:'Douala',branch:'VIE',email:'contact@sit.cm',phone:'(+237) 233-333-333',web:'www.gropamai.cm',company:'Phasellus aliquet ac sed.',number:'02'},
-    {id:2,name:'Augue.',country:'Eget.',city:'Proin eu eget.',branch:'NON VIE',email:'contacts@auguep.com',phone:'(+241) 033-333-333',web:'www.khm-group.com',company:'Ornare id malesuada.',number:'13'},
+export const SociétéUsers = [
+    { id: 1, name: 'Sit.', country: 'Cameroun', city: 'Douala', branch: 'VIE', email: 'contact@sit.cm', phone: '(+237) 233-333-333', web: 'www.gropamai.cm', company: 'Phasellus aliquet ac sed.', number: '02' },
+    { id: 2, name: 'Augue.', country: 'Eget.', city: 'Proin eu eget.', branch: 'NON VIE', email: 'contacts@auguep.com', phone: '(+241) 033-333-333', web: 'www.khm-group.com', company: 'Ornare id malesuada.', number: '13' },
 ];
 
-export const countries=[
+export const countries = [
     'Cameroun',
     'Eget',
     'France',
 ];
 
-export const activeStatus=[
+export const activeStatus = [
     'NON VIE',
     'VIE',
 ];
 
-export const cities=[
+export const cities = [
     'Douala',
     'Proin',
 ];
+
+export const commissairesTab = [
+    'Noms',
+    'Prenoms',
+    'N° Pièce didentification',
+    'Date de délivrence',
+    'Lieu de délivrence',
+    'E-mail',
+    'URL WebDAV',
+    'Numéro Tél.',
+    'Actions',
+];
+
+export const commissairesUsers = [
+    { id: 1, name: 'Foley', lastName: 'Alexander', identity: '101010101010101010', birth: '2018-06-23', area: 'CAM LT05', email: 'contact@gropamai.cm', web: 'www.domaine.cm', phone: '(+237) 233-333-333' },
+    { id: 2, name: 'DOE', lastName: 'John', identity: '101010101010101010', birth: '2018-06-23', area: 'CAM LT05', email: 'contacts@khm-group.com', web: 'www.domaine.cm', phone: '(+241) 033-333-333' },
+]
