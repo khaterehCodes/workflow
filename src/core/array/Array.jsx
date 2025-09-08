@@ -94,7 +94,22 @@ export const commissairesUsers = [
     { id: 2, name: 'DOE', lastName: 'John', identity: '101010101010101010', birth: '2018-06-23', area: 'CAM LT05', email: 'contacts@khm-group.com', web: 'www.domaine.cm', phone: '(+241) 033-333-333' },
 ];
 
-export const area=[
+export const area = [
     'CAM LT05',
     'CAM LT0576',
+];
+
+export const CRCAtab = [
+    'Noms',
+    'Prenoms',
+    'Numéro Tél.',
+    'E-mail',
+    'Date dajout',
+    'Profil',
+    'Actions',
+];
+
+export const CRCAitem = [
+    { id: 1, name: 'Foley', lastName: 'Alexander', phone: '(+237) 233-333-333', email: 'contact@gropamai.cm', date: '2018-06-23', number: '.' },
+    { id: 2, name: 'DOE', lastName: 'John', phone: '(+241) 033-333-333', email: 'contacts@khm-group.com', date: '2018-06-23', number: '.' },
 ]

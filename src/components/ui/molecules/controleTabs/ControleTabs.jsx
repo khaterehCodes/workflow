@@ -3,6 +3,7 @@ import H1 from "../../atoms/customH1/H1";
 import TabBar from "../tabBar/TabBar";
 import Société from "../société/Société";
 import Commissaires from "../commissaires/Commissaires";
+import CRCA from "../CRCA/CRCA";
 
 function ControleTabs() {
     const [IsTab, setIsTab] = useState(1)
@@ -13,7 +14,8 @@ function ControleTabs() {
                 <TabBar IsTab={IsTab} setIsTab={setIsTab} />
             </div>
             {IsTab === 1 && (<><Société /></>)}
-            {IsTab === 2 && (<><Commissaires/></>)}
+            {IsTab === 2 && (<><Commissaires /></>)}
+            {IsTab === 3 && (<><CRCA /></>)}
         </>
     );
 }
