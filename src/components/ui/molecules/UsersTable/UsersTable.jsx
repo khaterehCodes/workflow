@@ -1,36 +1,36 @@
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteUser } from "../../../../core/redux/feature/UserSlice";
 import { statusStyles } from "../../../../core/array/Array";
+import { useNavigate } from "react-router-dom";
 import UserPagination from "../UserPagination/UserPagination";
-import H2 from "../../atoms/customH2/H2";
 import Span from "../../atoms/customSpan/Span";
-import Button from "../../atoms/customButton/Button";
+import ActionButtons from "../../molecules/ActionButtons/ActionButtons";
 import { usePagination } from "../../../../core/hooks/UsePagination/UsePagination";
 
-function UsersTable({ users }) {
+function UserTable({ users }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {
-    currentPage,
-    setCurrentPage,
-    totalPages,
-    pages,
-    prevPage,
-    nextPage,
-    getVisibleUsers,
-  } = usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
+  const { currentPage, setCurrentPage, totalPages, pages, prevPage, nextPage, getVisibleUsers } =
+    usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
 
   const visibleUsers = getVisibleUsers(users);
 
-  const handleDelete = index => dispatch(deleteUser(index));
-  const handleEdit = user => navigate("/edituser", { state: { user } });
+  const handleDelete = (index) => dispatch(deleteUser(index));
+  const handleEdit = (user) => navigate("/edituser", { state: { user } });
+  const handleAdd = () => navigate("/edituser");
 
   return (
     <div className="flex flex-col items-center mt-6">
-      <div className="w-[1104px] mb-4 flex justify-between items-center">
-        <H2 className="text-3xl font-semibold">Liste des utilisateurs</H2>
+      <div className="w-[1104px] mb-4 flex justify-start items-center">
+        <ActionButtons
+          onAdd={handleAdd}
+          addLabel="Ajouter un utilisateur"
+          size="lg"
+          showEdit={false}
+          showDelete={false}
+          showAdd={true}
+        />
       </div>
       <div className="min-w-[1104px] h-[700px] bg-white rounded-[12px] shadow pt-5 px-2 flex flex-col">
         <div className="flex-1 overflow-y-auto">
@@ -58,22 +58,20 @@ function UsersTable({ users }) {
                         {user.statut}
                       </Span>
                     </td>
-                    <td className="px-6 py-4 flex gap-2">
-                      <Button onClick={() => handleEdit(user)} className="w-[81px] text-[12px] font-medium border rounded-[10px] border-[#5C73DB] text-[#5C73DB] h-[31px]">
-                        Modifier
-                      </Button>
-                      <Button onClick={() => handleDelete(index)} className="bg-[#DC2626] font-medium text-[12px] w-[81px] rounded-[10px] h-[31px] text-white">
-                        Supprimer
-                      </Button>
+                    <td className="px-6 py-4">
+                      <ActionButtons
+                        onEdit={() => handleEdit(user)}
+                        onDelete={() => handleDelete(index)}
+                        size="md"
+                        showAdd={false}
+                      />
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           ) : (
-            <div className="text-center text-gray-500 mt-10">
-              Aucun utilisateur à afficher.
-            </div>
+            <div className="text-center text-gray-500 mt-10">Aucun utilisateur à afficher.</div>
           )}
         </div>
         <div className="mt-auto">
@@ -93,4 +91,4 @@ function UsersTable({ users }) {
   );
 }
 
-export default UsersTable;
+export default UserTable;

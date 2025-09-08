@@ -8,6 +8,7 @@ function UserListOrganisms() {
 
     return (
         <>
+            <h1 className="text-[#000000] w-[1104px] ml-16 text-[32px] font-semibold mb-6">Configuration</h1>
             <UserSearchBar query={query} setQuery={setQuery} />
             <UsersTable users={filteredItems} />
         </>

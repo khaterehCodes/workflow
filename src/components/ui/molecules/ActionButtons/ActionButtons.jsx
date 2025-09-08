@@ -11,15 +11,16 @@ function ActionButtons({
   showEdit = true,
   showDelete = true,
   showAdd = false,
+  className = "",
 }) {
   const sizeClasses = {
     sm: "w-[70px] h-[28px] text-[11px]",
     md: "w-[85px] h-[32px] text-[12px]",
-    lg: "w-[110px] h-[36px] text-[14px]",
+    lg: "w-[226px] h-[48px] text-[18px]",
   };
 
   return (
-    <div className="flex gap-2">
+    <div className={`flex gap-2 ${className}`}>
       {showEdit && (
         <Button
           onClick={onEdit}
@@ -39,7 +40,7 @@ function ActionButtons({
       {showAdd && (
         <Button
           onClick={onAdd}
-          className={`${sizeClasses[size]} bg-[#16A34A] font-medium rounded-[10px] text-white`}
+          className={`${sizeClasses[size]} bg-[#4763E4] font-medium rounded-[10px] text-white`}
         >
           {addLabel}
         </Button>

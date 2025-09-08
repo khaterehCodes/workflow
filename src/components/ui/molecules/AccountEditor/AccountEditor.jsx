@@ -31,7 +31,7 @@ function EditUsersPage() {
 
     return (
         <div>
-            <h1 className="text-black ml-20 text-[32px] font-semibold mb-4">Configuration</h1>
+            <h1 className="text-black ml-16 text-[32px] font-semibold mb-4">Configuration</h1>
             <div className="p-6 w-[1104px] h-[598px] mx-auto bg-white rounded-[12px] shadow flex flex-col">
                 <p className="text-[#27272A] text-[18px] mb-6">{isEdit ? "Editer un compte" : "Ajouter un utilisateur"}</p>
                 <form onSubmit={formikSubmit} className="grid grid-cols-2 font-normal text-[16px] gap-x-4 gap-y-6 flex-1 overflow-y-auto">
