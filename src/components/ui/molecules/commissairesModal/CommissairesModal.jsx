@@ -9,7 +9,10 @@ import { pushUser } from "../../../../core/redux/feature/CommissairesMember";
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker'
 import { area } from "../../../../core/array/Array";
+import RoleModal from "../roleModal/RoleModal";
 function CommissairesModal({ openModal, setOpenModal }) {
+    const [openRole, setOpenRole] = useState(false)
+    const [role, setRole] = useState('')
     const [hireDate, setHireDate] = useState(null)
     const [submitDate, setSubmitDate] = useState(null)
     const [IsArea, setIsArea] = useState(false)
@@ -45,7 +48,7 @@ function CommissairesModal({ openModal, setOpenModal }) {
         <div>
             {openModal && (<div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-40">
                 <div className="w-[1100px] h-[750px] bg-white relative left-[100px] flex flex-col rounded-[12px] p-10">
-                    <H2 className={'text-[20px]'}>Enregistrement d'une compagnie d'assurance</H2>
+                    <H2 className={'text-[20px] font-medium'}>Enregistrement d'une compagnie d'assurance</H2>
                     <div className="w-[1000px] h-[650px] flex flex-wrap items-center justify-between mt-[30px]">
                         <div className="w-[490px] h-[80px]">
                             <Label htmlFor={'name'}>Nom</Label>
@@ -172,10 +175,13 @@ function CommissairesModal({ openModal, setOpenModal }) {
                         </div>
                         <div className="w-[490px] h-[80px]">
                             <Label htmlFor={'country'}>Role</Label>
-                            <div className="w-[480px] h-[50px] rounded-[12px] border-[1px] border-[#F4F4F5] hover:border-[#5C73DB] flex items-center justify-between p-3" dir="rtl">
+                            <div className="w-[480px] h-[50px] rounded-[12px] border-[1px] border-[#F4F4F5] hover:border-[#5C73DB] flex items-center justify-between p-3">
+                                {role}
                                 <div className="w-[120px] h-[50px] flex items-center justify-around" dir="ltr">
                                     <Icons name={'arrowDown'} />
-                                    <Button className={'w-[82px] h-[33px] bg-[#4763E4] rounded-[10px] text-white flex items-center justify-around text-[14px]'}>
+                                    <Button
+                                        onClick={() => setOpenRole(true)}
+                                        className={'w-[82px] h-[33px] bg-[#4763E4] rounded-[10px] text-white flex items-center justify-around text-[14px]'}>
                                         <Icons name={'plus'} />
                                         Ajouter
                                     </Button>
@@ -192,6 +198,7 @@ function CommissairesModal({ openModal, setOpenModal }) {
                             className={'w-[200px] h-[50px] text-[18px] hover:bg-[#4763E4] hover:text-white hover:border-none rounded-[10px] border-[1px] border-[#D4D4D8]'}>Annuler</Button>
                     </div>
                 </div>
+                <RoleModal openRole={openRole} setOpenRole={setOpenRole} setRole={setRole}/>
             </div>)}
         </div>
     );
