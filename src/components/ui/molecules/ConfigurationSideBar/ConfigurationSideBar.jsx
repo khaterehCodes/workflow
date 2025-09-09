@@ -11,7 +11,7 @@ function ConfigurationSideBar() {
   return (
     <div className="mt-7 w-[216px]">
       <div
-        className="flex items-center justify-between px-7 h-[48px] cursor-pointer"
+        className="flex items-center justify-between px-2 h-[48px] cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center space-x-2">
