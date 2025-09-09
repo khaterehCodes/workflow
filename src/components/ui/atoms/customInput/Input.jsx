@@ -7,8 +7,8 @@ function Input({ type = 'text', name, placeholder, value, onChange, onBlur, auto
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                onBlur={onBlur}
-                autoComplete={autoComplete}
+                // onBlur={onBlur}
+                // autoComplete={autoComplete}
                 className={className} />
             {children}
         </div>

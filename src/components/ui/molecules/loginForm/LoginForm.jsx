@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
 import Label from "../../atoms/customLabel/Label";
@@ -7,21 +7,32 @@ import Button from "../../atoms/customButton/Button";
 import P from "../../atoms/customP/P";
 import Icons from "../../atoms/icons/Icons";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../../core/context/AouthContext";
+import FakeLogin from "../../../../services/AuthService";
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email().required(),
     password: Yup.string(),
 })
 function LoginForm() {
     const navigate = useNavigate()
+    const { login } = useAuth();
+    const loginHandler = async (values, { setSubmitting, setErrors }) => {
+        try {
+            const response = await FakeLogin(values.email);
+            login(response.token, response.role);
+            navigate('/');
+        } catch (error) {
+            setErrors({ email: error.message });
+        } finally {
+            setSubmitting(false);
+        }
+    };
     return (
         <>
             <Formik
                 initialValues={{ email: '', password: '' }}
                 validationSchema={LoginSchema}
-                onSubmit={(values) => {
-                    console.log(values);
-                    navigate('/')
-                }}
+                onSubmit={loginHandler}
             >
                 {({ isSubmitting, errors }) => (
                     <Form>
@@ -39,6 +50,7 @@ function LoginForm() {
                                 ${errors.email ? "border-[#F87171] placeholder:text-[#F87171]" : "border-[#E4E4E7]"}
                                 `}
                                 placeholder='********************' />
+                            <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
                         </div>
                         <div className="w-[550px] h-[130px] flex flex-col items-center justify-center gap-2">
                             <Link to='/resetEmail'>

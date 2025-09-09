@@ -9,28 +9,35 @@ import ResetEmailPage from './components/ui/pages/resetEmailPage/ResetEmailPage'
 import ConfirmEmail from './components/ui/pages/confirmEmail/ConfirmEmail';
 import BasePage from './components/ui/pages/BasePage/BasePage';
 import ControlePage from './components/ui/pages/ControlePage/ControlePage';
+import { AuthProvider } from './core/context/AouthContext';
+import ProtectedRoute from './protectedRoute/ProtectedRoute';
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/edituser' element={<EditUsersPage />} />
-          <Route path='/signup' element={<SignupPage />} />
-          <Route path='/resetPassword' element={<ResetPasswordPage />} />
-          <Route path='/resetEmail' element={<ResetEmailPage />} />
-          <Route path='/confirmEmail' element={<ConfirmEmail />} />
-          <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/' element={<UserListPage/>}/>
-          <Route path="/base" element={<BasePage />} />
-          <Route path="/controle" element={<ControlePage />} />
-          <Route path='/signup' element={<SignupPage/>}/>
-          <Route path='/resetPassword' element={<ResetPasswordPage/>}/>
-          <Route path='/resetEmail' element={<ResetEmailPage/>}/>
-          <Route path='/confirmEmail' element={<ConfirmEmail/>}/>
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path='/edituser' element={
+              <ProtectedRoute role={'editor'}>
+                <EditUsersPage />
+              </ProtectedRoute>
+            } />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/' element={
+              <ProtectedRoute>
+                <UserListPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/base" element={<BasePage />} />
+            <Route path="/controle" element={<ControlePage />} />
+            <Route path='/signup' element={<SignupPage />} />
+            <Route path='/resetPassword' element={<ResetPasswordPage />} />
+            <Route path='/resetEmail' element={<ResetEmailPage />} />
+            <Route path='/confirmEmail' element={<ConfirmEmail />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
