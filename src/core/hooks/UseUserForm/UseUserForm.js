@@ -10,7 +10,6 @@ const validationSchema = Yup.object({
     .required("Requis"),
   statut: Yup.string().oneOf(["Validé", "Actif", "Inactif"]).required("Requis"),
 });
-
 function useUserForm({ initialValues, onSubmit, isEdit }) {
   const formik = useFormik({
     initialValues,

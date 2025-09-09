@@ -1,22 +1,29 @@
 import { useDispatch } from "react-redux";
-import { deleteUser } from "../../../../core/redux/feature/UserSlice";
 import { statusStyles } from "../../../../core/array/Array";
 import { useNavigate } from "react-router-dom";
 import UserPagination from "../UserPagination/UserPagination";
 import Span from "../../atoms/customSpan/Span";
 import ActionButtons from "../../molecules/ActionButtons/ActionButtons";
 import { usePagination } from "../../../../core/hooks/UsePagination/UsePagination";
+import { deleteItem } from "../../../../core/redux/feature/UserSlice";
 
 function UserTable({ users }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { currentPage, setCurrentPage, totalPages, pages, prevPage, nextPage, getVisibleUsers } =
-    usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
+  const {
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    pages,
+    prevPage,
+    nextPage,
+    getVisibleUsers,
+  } = usePagination({ totalUsers: users.length, usersPerPage: 5, fixedPages: 10 });
 
   const visibleUsers = getVisibleUsers(users);
 
-  const handleDelete = (index) => dispatch(deleteUser(index));
+  const handleDelete = (id) => dispatch(deleteItem({ key: "users", id }));
   const handleEdit = (user) => navigate("/edituser", { state: { user } });
   const handleAdd = () => navigate("/edituser");
 
@@ -47,21 +54,25 @@ function UserTable({ users }) {
                 </tr>
               </thead>
               <tbody>
-                {visibleUsers.map((user, index) => (
-                  <tr key={user.email} className="border-b hover:bg-gray-50">
+                {visibleUsers.map((user) => (
+                  <tr key={user.id} className="border-b hover:bg-gray-50">
                     <td className="px-6 py-6">{user.noms}</td>
                     <td className="px-6 py-6">{user.prenoms}</td>
                     <td className="px-6 py-4">{user.email}</td>
                     <td className="px-6 py-4">{user.telephone}</td>
                     <td className="px-6 py-4">
-                      <Span className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${statusStyles[user.statut] || "text-gray-500 bg-gray-100"}`}>
+                      <Span
+                        className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${
+                          statusStyles[user.statut] || "text-gray-500 bg-gray-100"
+                        }`}
+                      >
                         {user.statut}
                       </Span>
                     </td>
                     <td className="px-6 py-4">
                       <ActionButtons
                         onEdit={() => handleEdit(user)}
-                        onDelete={() => handleDelete(index)}
+                        onDelete={() => handleDelete(user.id)}
                         size="md"
                         showAdd={false}
                       />
@@ -71,7 +82,9 @@ function UserTable({ users }) {
               </tbody>
             </table>
           ) : (
-            <div className="text-center text-gray-500 mt-10">Aucun utilisateur à afficher.</div>
+            <div className="text-center text-gray-500 mt-10">
+              Aucun utilisateur à afficher.
+            </div>
           )}
         </div>
         <div className="mt-auto">

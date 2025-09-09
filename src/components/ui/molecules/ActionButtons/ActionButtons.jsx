@@ -1,4 +1,5 @@
 import Button from "../../atoms/customButton/Button";
+import Icons from "../../atoms/icons/Icons";
 
 function ActionButtons({
   onEdit,
@@ -15,7 +16,7 @@ function ActionButtons({
 }) {
   const sizeClasses = {
     sm: "w-[70px] h-[28px] text-[11px]",
-    md: "w-[85px] h-[32px] text-[12px]",
+    md: "w-[82px] h-[33px] text-[14px] font-light",
     lg: "w-[226px] h-[48px] text-[18px]",
   };
 
@@ -40,11 +41,13 @@ function ActionButtons({
       {showAdd && (
         <Button
           onClick={onAdd}
-          className={`${sizeClasses[size]} bg-[#4763E4] font-medium rounded-[10px] text-white`}
+          className={`${sizeClasses[size]} bg-[#4763E4] font-medium rounded-[10px] text-white flex items-center justify-center gap-x-2`}
         >
           {addLabel}
+          <Icons name="plus" />
         </Button>
       )}
+
     </div>
   );
 }

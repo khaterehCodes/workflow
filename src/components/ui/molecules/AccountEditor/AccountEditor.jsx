@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { addUser, updateUser } from "../../../../core/redux/feature/UserSlice";
+import { addItem , updateItem } from "../../../../core/redux/feature/UserSlice";
 import useUserForm from "../../../../core/hooks/UseUserForm/UseUserForm";
 import InputField from "../InputField/InputField";
 import { fields } from "../../../../core/array/Array";
+import { nanoid } from "@reduxjs/toolkit";
 
 function EditUsersPage() {
     const dispatch = useDispatch();
@@ -14,12 +15,22 @@ function EditUsersPage() {
     const isEdit = Boolean(editingUser);
 
     const initialValues = editingUser || {
-        email: "", telephone: "", noms: "", prenoms: "", dateCreation: "", dateDerniereConnexion: "", statut: "Validé"
+        id: "", email: "", telephone: "", noms: "", prenoms: "", dateCreation: "", dateDerniereConnexion: "", statut: "Validé"
     };
 
     const handleSubmit = (values) => {
-        const userToSave = { ...values, statut: "Validé" };
-        isEdit ? dispatch(updateUser(userToSave)) : dispatch(addUser(userToSave));
+        const userToSave = {
+            ...values,
+            id: isEdit ? values.id : nanoid(),
+            statut: "Validé"
+        };
+
+        if (isEdit) {
+            dispatch(updateItem({ key: "users", item: userToSave }));
+        } else {
+            dispatch(addItem({ key: "users", item: userToSave }));
+        }
+
         navigate("/");
     };
 
