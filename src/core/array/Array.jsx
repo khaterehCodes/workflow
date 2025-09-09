@@ -123,3 +123,14 @@ export const controlSettingTabs = [
 export const controleArray = [
     { id: 1, label: 'Brigade test #1', description: '.' }
 ];
+
+export const groupsControle = [
+    { id: 1, label: 'Equipe #1', description: 'Première équipe de test' },
+    { id: 2, label: 'Equipe #2', description: '.' },
+    { id: 3, label: 'Equipe #3', description: '.' },
+    { id: 4, label: 'Equipe #4', description: '.' },
+];
+
+export const dutyLists = [
+    { id: 1, label: 'Essai digilente', description: '.' },
+];
