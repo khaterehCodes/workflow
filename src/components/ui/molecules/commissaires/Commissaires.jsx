@@ -11,7 +11,6 @@ import CommissairesModal from "../commissairesModal/CommissairesModal";
 
 function Société() {
     const countUser = useSelector(state => state.member.length)
-    const formatCount = String(countUser).padStart(2, '0')
     const [currentPage, setCurrentPage] = useState(0)
     const [openModal, setOpenModal] = useState(false)
     return (
@@ -42,8 +41,8 @@ function Société() {
             </>) : (<>Aucun utilisateur à afficher</>)}
             <div className='w-[1200px] h-[40px] flex items-center justify-between absolute top-[820px]'>
                 <H2 className={'text-[#4763E4]'}>
-                    {formatCount}&nbsp;
-                    sociétés
+                    {countUser}&nbsp;
+                     Commissaires contrôleurs
                 </H2>
                 <Paginate setCurrentPage={setCurrentPage} />
             </div>
