@@ -1,7 +1,9 @@
+import ControleTabsOrganisms from "../../organisms/controleTabsOrganisms/ControleTabsOrganisms";
+
 function ControlePage(){
     return(
         <>
-        control
+           <ControleTabsOrganisms/>
         </>
     )
 }
