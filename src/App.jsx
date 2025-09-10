@@ -11,6 +11,7 @@ import BasePage from './components/ui/pages/BasePage/BasePage';
 import ControlePage from './components/ui/pages/ControlePage/ControlePage';
 import { AuthProvider } from './core/context/AouthContext';
 import ProtectedRoute from './protectedRoute/ProtectedRoute';
+import AuthCheck from './authCheck/AuthCheck';
 function App() {
   return (
     <AuthProvider>
@@ -22,15 +23,23 @@ function App() {
                 <EditUsersPage />
               </ProtectedRoute>
             } />
-            <Route path='/login' element={<LoginPage />} />
+            <Route path='/login' element={
+              <AuthCheck>
+                <LoginPage />
+              </AuthCheck>
+            } />
             <Route path='/' element={
-              <ProtectedRoute>
+              <ProtectedRoute role={'reader'}>
                 <UserListPage />
               </ProtectedRoute>
             } />
             <Route path="/base" element={<BasePage />} />
             <Route path="/controle" element={<ControlePage />} />
-            <Route path='/signup' element={<SignupPage />} />
+            <Route path='/signup' element={
+              <AuthCheck>
+                <SignupPage />
+              </AuthCheck>
+            } />
             <Route path='/resetPassword' element={<ResetPasswordPage />} />
             <Route path='/resetEmail' element={<ResetEmailPage />} />
             <Route path='/confirmEmail' element={<ConfirmEmail />} />

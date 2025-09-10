@@ -4,7 +4,14 @@ import { useAuth } from "../core/context/AouthContext";
 function ProtectedRoute({ children, role }) {
     const { user } = useAuth();
     if (!user) return <Navigate to={'/login'} />
-    if (role && user.role !== role) return <Navigate to={'/controle'} />
+    if (role && user.role !== role) {
+        if (user.role === 'editor') {
+            return <Navigate to={'/controle'} />
+        }
+        if (user.role === 'reader') {
+            return <Navigate to={'/'} />
+        }
+    }
     return children
 }
 
