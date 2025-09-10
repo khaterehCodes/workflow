@@ -11,6 +11,7 @@ function SideBar() {
       <ItemsSideBar />
       <div className="mt-[480px] mb-4">
         <SideBarProfile />
+        
       </div>
     </div>
   );

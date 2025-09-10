@@ -11,7 +11,7 @@ const saveToLocal = (key, data) => {
 
 const initialState = {
   users: loadFromLocal("users"),
-  cities: loadFromLocal("cities"),
+  countries: loadFromLocal("countries"),
   products: loadFromLocal("products"),
 };
 

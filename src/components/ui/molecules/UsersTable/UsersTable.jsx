@@ -29,7 +29,7 @@ function UserTable({ users }) {
 
   return (
     <div className="flex flex-col items-center mt-6">
-      <div className="w-[1104px] mb-4 flex justify-start items-center">
+      <div className="w-[1190px] mb-4 flex justify-start items-center">
         <ActionButtons
           onAdd={handleAdd}
           addLabel="Ajouter un utilisateur"
@@ -39,7 +39,7 @@ function UserTable({ users }) {
           showAdd={true}
         />
       </div>
-      <div className="min-w-[1104px] h-[700px] bg-white rounded-[12px] shadow pt-5 px-2 flex flex-col">
+      <div className="w-[1190px] h-[700px] bg-white rounded-[12px] shadow pt-5 px-2 flex flex-col">
         <div className="flex-1 overflow-y-auto">
           {visibleUsers.length > 0 ? (
             <table className="w-full">
@@ -62,10 +62,7 @@ function UserTable({ users }) {
                     <td className="px-6 py-4">{user.telephone}</td>
                     <td className="px-6 py-4">
                       <Span
-                        className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${
-                          statusStyles[user.statut] || "text-gray-500 bg-gray-100"
-                        }`}
-                      >
+                        className={`font-medium px-3 py-1 rounded-full text-sm inline-block ${statusStyles[user.statut] || "text-gray-500 bg-gray-100"}`}>
                         {user.statut}
                       </Span>
                     </td>

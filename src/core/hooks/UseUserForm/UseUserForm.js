@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const validationSchema = Yup.object({
+const userValidationSchema = Yup.object({
   email: Yup.string().email("E-mail invalide").required("Requis"),
   noms: Yup.string().required("Requis"),
   prenoms: Yup.string().required("Requis"),
@@ -10,7 +10,16 @@ const validationSchema = Yup.object({
     .required("Requis"),
   statut: Yup.string().oneOf(["Validé", "Actif", "Inactif"]).required("Requis"),
 });
-function useUserForm({ initialValues, onSubmit, isEdit }) {
+
+const countryValidationSchema = Yup.object({
+  libelle: Yup.string().required("Libellé est requis"),
+  codeISO: Yup.string().required("Code ISO est requis"),
+  description: Yup.string(),
+});
+
+function useUserForm({ initialValues, onSubmit, isEdit = false, formType = "user" }) {
+  const validationSchema = formType === "country" ? countryValidationSchema : userValidationSchema;
+
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -21,7 +30,7 @@ function useUserForm({ initialValues, onSubmit, isEdit }) {
   return {
     ...formik,
     isSubmitDisabled: !(formik.dirty && formik.isValid),
-    isEmailDisabled: isEdit,
+    isEmailDisabled: formType === "user" && isEdit,
   };
 }
 
