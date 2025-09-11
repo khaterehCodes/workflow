@@ -45,11 +45,7 @@ function CityModal({ setOpenModal, initialValues, onSave }) {
         <div className="px-6 py-4 ml-10 font-medium text-[20px]">
           <H1>{isEdit ? "Modifier la ville" : "Enregistrement d'une ville"}</H1>
         </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col items-center gap-6 px-6 py-6 flex-1 overflow-y-auto"
-        >
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6 px-6 py-6 flex-1 overflow-y-auto">
           {fields.map(({ label, name, type }) => (
             <InputField
               key={name}
@@ -65,27 +61,15 @@ function CityModal({ setOpenModal, initialValues, onSave }) {
 
           <div className="flex flex-col w-[1040px]">
             <label className="mb-2 text-[16px] font-normal text-black">Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              className="border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px]"
-            />
+            <textarea name="description" value={formData.description} onChange={handleChange} className="border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px]"/>
             <span className="min-h-[20px] block" />
           </div>
 
           <div className="flex justify-start gap-4 w-[1040px] mt-auto border-t pt-4">
-            <Button
-              type="submit"
-              className="rounded-[10px] w-[200px] h-[42px] text-white font-semibold bg-[#4763E4] hover:bg-[#3b55c7]"
-            >
+            <Button type="submit" className="rounded-[10px] w-[200px] h-[42px] text-white font-semibold bg-[#4763E4] hover:bg-[#3b55c7]">
               {isEdit ? "Modifier" : "Enregistrer"}
             </Button>
-            <Button
-              type="button"
-              onClick={() => setOpenModal(false)}
-              className="bg-white text-black border border-gray-300 hover:bg-gray-100 rounded-[10px] w-[200px] h-[42px]"
-            >
+            <Button type="button" onClick={() => setOpenModal(false)} className="bg-white text-black border border-gray-300 hover:bg-gray-100 rounded-[10px] w-[200px] h-[42px]">
               Annuler
             </Button>
           </div>

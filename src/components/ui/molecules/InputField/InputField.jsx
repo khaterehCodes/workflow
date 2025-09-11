@@ -15,10 +15,7 @@ function InputField({label,name,type,value,onChange,onBlur,error,touched,disable
                 className={`
           h-[49px] rounded-[12px] px-3 border border-gray-300
           focus:outline-none focus:border-[#5C73DB] 
-          disabled:bg-gray-100 disabled:cursor-not-allowed
-          ${error && touched ? "border-red-500" : ""}
-          ${className}
-        `} />
+          disabled:bg-gray-100 disabled:cursor-not-allowed${error && touched ? "border-red-500" : ""} ${className}`} />
             {error && touched && <span className="text-red-500 text-sm mt-1">{error}</span>}
         </div>
     );

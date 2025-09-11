@@ -30,17 +30,12 @@ function CountryList() {
       <div className="w-[1190px] h-[389px] bg-white rounded-[12px]  pt-5 px-2 flex flex-col">
         <div className="w-full mb-4 flex justify-between items-center px-4">
           <H1 className="text-[18px] text-[#7777ac] font-normal">Liste des pays</H1>
-          <ActionButtons
-            onAdd={() => {
-              setEditingCountry(null);
-              setOpenModal(true);
-            }}
+          <ActionButtons onAdd={() => {   setEditingCountry(null);   setOpenModal(true); }}
             addLabel="Ajouter"
             size="md"
             showEdit={false}
             showDelete={false}
-            showAdd={true}
-          />
+            showAdd={true} />
         </div>
         <UserSearchBar
           placeholder="Vous cherchez un pays ..."
@@ -56,17 +51,13 @@ function CountryList() {
                   <td className="px-6 py-6">{country.codeISO}</td>
                   <td className="px-6 py-4">{country.description}</td>
                   <td className="px-6 py-4">
-                    <ActionButtons
-                      onEdit={() => handleEdit(country)}
-                      onDelete={() => handleDelete(country.id)}
+                    <ActionButtons  onEdit={() => handleEdit(country)}  onDelete={() => handleDelete(country.id)}
                       size="base"
                       showAdd={false} />
                   </td> </>)} />
             </div>
           ) : (
-            <div className="flex-1 flex items-center justify-center text-center text-gray-500">
-              Aucun pays à afficher.
-            </div>
+            <div className="flex-1 flex items-center justify-center text-center text-gray-500"> Aucun pays à afficher.</div>
           )}
 
           <div className="mt-2">
@@ -85,9 +76,7 @@ function CountryList() {
           </div>
         </div>
       </div>
-      {openModal && (
-        <CountryModal setOpenModal={setOpenModal}initialValues={editingCountry} />
-      )}
+      {openModal && (<CountryModal setOpenModal={setOpenModal}initialValues={editingCountry} /> )}
     </div>
   );
 }

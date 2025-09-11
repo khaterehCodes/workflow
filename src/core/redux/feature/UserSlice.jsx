@@ -13,6 +13,8 @@ const initialState = {
   users: loadFromLocal("users"),
   countries: loadFromLocal("countries"),
   products: loadFromLocal("products"),
+  cities: loadFromLocal("cities"),
+  evaluationMethods: loadFromLocal("evaluationMethods"),
 };
 
 const dataSlice = createSlice({

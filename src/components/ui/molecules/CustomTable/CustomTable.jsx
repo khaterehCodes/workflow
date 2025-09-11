@@ -4,11 +4,7 @@ function CustomTable({ columns = [], data = [], renderRow }) {
             <thead className="text-[#A1A1AA] text-[16px]">
                 <tr>
                     {columns.map((col) => (
-                        <th
-                            key={col.key}
-                            className={`px-6 py-3 text-left font-medium ${col.className || ""}`}
-                            style={{ width: col.width }}
-                        >
+                        <th key={col.key} className={`px-6 py-3 text-left font-medium ${col.className || ""}`} style={{ width: col.width }} >
                             {col.label}
                         </th>
                     ))}

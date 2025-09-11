@@ -14,9 +14,7 @@ function EditUsersPage() {
     const editingUser = location.state?.user;
     const isEdit = Boolean(editingUser);
 
-    const initialValues = editingUser || {
-        id: "", email: "", telephone: "", noms: "", prenoms: "", dateCreation: "", dateDerniereConnexion: "", statut: "Validé"
-    };
+    const initialValues = editingUser || { id: "", email: "", telephone: "", noms: "", prenoms: "", dateCreation: "", dateDerniereConnexion: "", statut: "Validé"};
 
     const handleSubmit = (values) => {
         const userToSave = {
@@ -62,11 +60,7 @@ function EditUsersPage() {
                     ))}
                     <hr className="col-span-2 border-t w-full mt-16" />
                     <div className="col-span-2 mt-auto">
-                        <button
-                            type="submit"
-                            disabled={isSubmitDisabled || isSubmitting}
-                            className={`w-[103px] h-[48px] py-2 rounded-[10px] text-white font-bold ${isSubmitDisabled ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}`}
-                        >
+                        <button  type="submit"  disabled={isSubmitDisabled || isSubmitting}  className={`w-[103px] h-[48px] py-2 rounded-[10px] text-white font-bold ${isSubmitDisabled ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}`}>
                             {isEdit ? "Modifier" : "Ajouter"}
                         </button>
                     </div>
