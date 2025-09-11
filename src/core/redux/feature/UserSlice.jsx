@@ -1,37 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { users as initialUsers } from "../../array/Array";
 
-const loadUsers = () => {
-  const stored = localStorage.getItem("users");
-  return stored ? JSON.parse(stored) : initialUsers;
+const loadFromLocal = (key, fallback = []) => {
+  const stored = localStorage.getItem(key);
+  return stored ? JSON.parse(stored) : fallback;
 };
 
-const saveUsers = (users) => {
-  localStorage.setItem("users", JSON.stringify(users));
+const saveToLocal = (key, data) => {
+  localStorage.setItem(key, JSON.stringify(data));
 };
 
-const userSlice = createSlice({
-  name: "users",
-  initialState: {
-    list: loadUsers(),
-  },
+const initialState = {
+  users: loadFromLocal("users"),
+  countries: loadFromLocal("countries"),
+  products: loadFromLocal("products"),
+  cities: loadFromLocal("cities"),
+  evaluationMethods: loadFromLocal("evaluationMethods"),
+};
+
+const dataSlice = createSlice({
+  name: "data",
+  initialState,
   reducers: {
-    deleteUser: (state, action) => {
-      state.list = state.list.filter((user ,  i) => i !== action.payload);
-      saveUsers(state.list);
+    addItem: (state, action) => {
+      const { key, item } = action.payload;
+      state[key].push(item);
+      saveToLocal(key, state[key]);
     },
-    addUser: (state, action) => {
-      state.list = [...state.list, action.payload];
-      saveUsers(state.list);
+    deleteItem: (state, action) => {
+      const { key, id } = action.payload;
+      state[key] = state[key].filter((item) => item.id !== id);
+      saveToLocal(key, state[key]);
     },
-    updateUser: (state, action) => {
-      state.list = state.list.map((user) =>
-        user.email === action.payload.email ? action.payload : user
-      );
-      saveUsers(state.list);
+    updateItem: (state, action) => {
+      const { key, item } = action.payload;
+      state[key] = state[key].map((i) => (i.id === item.id ? item : i));
+      saveToLocal(key, state[key]);
     },
   },
 });
 
-export const { deleteUser, addUser, updateUser } = userSlice.actions;
-export default userSlice.reducer;
+export const { addItem, deleteItem, updateItem } = dataSlice.actions;
+export default dataSlice.reducer;

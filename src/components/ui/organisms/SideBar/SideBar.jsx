@@ -5,13 +5,13 @@ import SideBarTitle from "../../molecules/SideBarTitle/SideBarTitle";
 
 function SideBar() {
   return (
-    <div className="bg-[#0B1750] flex flex-col min-h-screen w-64 max-w-[256px] ">
+    <div className="bg-[#0B1750] flex flex-col min-h-screen w-64 max-w-[256px]">
       <SideBarTitle />
-      <div className="px-4">
-        <ConfigurationSideBar />
-        <ItemsSideBar />
-      </div>
-      <div className="mt-auto mb-4">
+
+      <ConfigurationSideBar />
+      <ItemsSideBar />
+
+      <div className="mt-auto mb-4 px-4">
         <SideBarProfile />
       </div>
     </div>
@@ -19,4 +19,3 @@ function SideBar() {
 }
 
 export default SideBar;
-

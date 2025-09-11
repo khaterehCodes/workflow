@@ -1,17 +1,25 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const validationSchema = Yup.object({
+const userValidationSchema = Yup.object({
   email: Yup.string().email("E-mail invalide").required("Requis"),
   noms: Yup.string().required("Requis"),
   prenoms: Yup.string().required("Requis"),
   telephone: Yup.string()
-    .matches(/^\d{11}$/, "Le numéro doit contenir exactement 11 chiffres")
+    .matches(/^\+33\s\d{9}$/  , "Le numéro doit contenir exactement 11 chiffres")
     .required("Requis"),
   statut: Yup.string().oneOf(["Validé", "Actif", "Inactif"]).required("Requis"),
 });
 
-function useUserForm({ initialValues, onSubmit, isEdit }) {
+const countryValidationSchema = Yup.object({
+  libelle: Yup.string().required("Libellé est requis"),
+  codeISO: Yup.string().required("Code ISO est requis"),
+  description: Yup.string(),
+});
+
+function useUserForm({ initialValues, onSubmit, isEdit = false, formType = "user" }) {
+  const validationSchema = formType === "country" ? countryValidationSchema : userValidationSchema;
+
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -22,7 +30,7 @@ function useUserForm({ initialValues, onSubmit, isEdit }) {
   return {
     ...formik,
     isSubmitDisabled: !(formik.dirty && formik.isValid),
-    isEmailDisabled: isEdit,
+    isEmailDisabled: formType === "user" && isEdit,
   };
 }
 

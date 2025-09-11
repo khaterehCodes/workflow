@@ -1,4 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
+import dataReducer from "../feature/UserSlice";
+
 import userReducer from "../feature/UserSlice"
 import SociétéUser from "../feature/SociétéUser";
 import CommissairesMember from '../feature/CommissairesMember'
@@ -8,6 +10,7 @@ import ControleGroups from '../feature/ControleGroups'
 import DutyLI from '../feature/DutyLI'
 const store = configureStore({
   reducer: {
+    data: dataReducer,
     users: userReducer,
     items: SociétéUser,
     member: CommissairesMember,
