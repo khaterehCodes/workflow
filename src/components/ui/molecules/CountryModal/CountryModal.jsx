@@ -78,9 +78,8 @@ function CountryModal({ setOpenModal, initialValues }) {
               value={values.description}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px] ${
-                errors.description && touched.description ? "border-red-500" : ""
-              }`}
+              className={`border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px] ${errors.description && touched.description ? "border-red-500" : ""
+                }`}
             />
             {errors.description && touched.description ? (
               <span className="text-red-500 text-sm mt-1 min-h-[20px] block">
@@ -95,11 +94,10 @@ function CountryModal({ setOpenModal, initialValues }) {
             <Button
               type="submit"
               disabled={isSubmitDisabled || isSubmitting}
-              className={`rounded-[10px] w-[200px] h-[42px] text-white font-semibold ${
-                isSubmitDisabled
+              className={`rounded-[10px] w-[200px] h-[42px] text-white font-semibold ${isSubmitDisabled
                   ? "bg-gray-300 cursor-not-allowed"
                   : "bg-[#4763E4] hover:bg-[#3b55c7]"
-              }`}
+                }`}
             >
               {isEdit ? "Modifier" : "Enregistrer"}
             </Button>

@@ -9,7 +9,7 @@ function SideBar() {
       <SideBarTitle />
       <ConfigurationSideBar />
       <ItemsSideBar />
-      <div className="mt-[480px] mb-4">
+      <div className="mt-[300px] mb-4">
         <SideBarProfile />
         
       </div>

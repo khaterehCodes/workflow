@@ -6,7 +6,7 @@ const userValidationSchema = Yup.object({
   noms: Yup.string().required("Requis"),
   prenoms: Yup.string().required("Requis"),
   telephone: Yup.string()
-    .matches(/^\d{11}$/, "Le numéro doit contenir exactement 11 chiffres")
+    .matches(/^\+33\s\d{9}$/  , "Le numéro doit contenir exactement 11 chiffres")
     .required("Requis"),
   statut: Yup.string().oneOf(["Validé", "Actif", "Inactif"]).required("Requis"),
 });

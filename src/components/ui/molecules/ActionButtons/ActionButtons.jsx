@@ -18,7 +18,8 @@ function ActionButtons({
     sm: "w-[70px] h-[28px] text-[11px]",
     md: "w-[82px] h-[33px] text-[14px] ",
     lg: "w-[226px] h-[48px] text-[18px]",
-    base:"w-[135px] h-[35px] text-[12px]"
+    base:"w-[135px] h-[35px] text-[12px]",
+    s:"w-[76px] h-[31px] text-[12px] font-medium"
   };
 
   return (
