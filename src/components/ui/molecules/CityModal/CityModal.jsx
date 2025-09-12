@@ -9,19 +9,12 @@ const fields = [
 ];
 
 function CityModal({ setOpenModal, initialValues, onSave }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-  });
-
+  const [formData, setFormData] = useState({ name: "", description: "",});
   const isEdit = Boolean(initialValues?.id);
-
   useEffect(() => {
     if (initialValues) {
-      setFormData({
-        name: initialValues.name || "",
-        description: initialValues.description || "",
-      });
+      setFormData({ name: initialValues.name || "",
+        description: initialValues.description || "",});
     }
   }, [initialValues]);
 
