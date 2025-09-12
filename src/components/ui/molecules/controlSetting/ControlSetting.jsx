@@ -9,10 +9,14 @@ import ControleItems from '../controleItems/ControleItems';
 import ControleModal from '../controleModal/ControleModal';
 import ControleGroups from '../controleGroups/ControleGroups';
 import DutyList from '../dutyList/DutyList';
+import { useSelector } from 'react-redux';
 
 function ControlSetting() {
-    const [currentPage, setCurrentPage] = useState(0)
-    const [openModal, setOpenModal] = useState(false)
+    const controle = useSelector(state => state.controle)
+    const [currentPage, setCurrentPage] = useState(0);
+    const [openModal, setOpenModal] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
+    const filterSearchItems = controle.filter(item => item.label.toLowerCase().includes(searchValue.toLowerCase()));
     return (
         <div className='w-full h-auto  flex flex-col items-center'>
             <div className="w-[1300px] h-[390px] flex flex-col items-center bg-white rounded-[12px]">
@@ -26,7 +30,10 @@ function ControlSetting() {
                 </div>
                 <div className='w-[1200px] h-[40px] rounded-[10px] border-[1px] border-[#4763E480] flex items-center p-4 gap-2'>
                     <Icons name={'search'} />
-                    <Input className='outline-none w-[1000px] h-[20px]' placeholder={'Vous cherchez un pays ...'} />
+                    <Input
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        className='outline-none w-[1000px] h-[20px]' placeholder={'Vous cherchez un pays ...'} />
                 </div>
                 {currentPage === 0 ? (<>
                     <div className='w-[1200px] h-[45px] flex justify-around text-[#A1A1AA] items-center m-[20px]'>
@@ -38,7 +45,7 @@ function ControlSetting() {
                             </React.Fragment>
                         ))}
                     </div>
-                    <ControleItems />
+                    <ControleItems items={filterSearchItems} />
                 </>) : (<>Aucun utilisateur à afficher</>)}
                 <div className='w-[1200px] h-[40px] flex items-center justify-between absolute top-[520px]'>
                     <H2 className={'text-[#4763E4]'}>
@@ -51,10 +58,10 @@ function ControlSetting() {
             <div className='w-full h-[600px]'>
                 <div className='w-[1300px] h-[550px] flex items-center justify-between'>
                     <div className='w-[640px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
-                        <ControleGroups/>
+                        <ControleGroups />
                     </div>
                     <div className='w-[640px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
-                        <DutyList/>
+                        <DutyList />
                     </div>
                 </div>
             </div>
