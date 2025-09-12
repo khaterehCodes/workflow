@@ -5,8 +5,8 @@ const FakeLogin = async (email) => {
                 resolve({ token: 'fakeJWT', role: 'reader' })
             } else if (email === 'edit@gmail.com') {
                 resolve({ token: 'fakeJWT', role: 'editor' })
-            } else {
-                reject({ message: 'No user exist' })
+            } else if(email === 'owner@gmail.com'){
+                resolve({token:'fakeJWT' , role:'owner'})
             }
         }, 1000)
     })

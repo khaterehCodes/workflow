@@ -11,6 +11,7 @@ function ProtectedRoute({ children, role }) {
         if (user.role === 'reader') {
             return <Navigate to={'/'} />
         }
+        if (user.role === 'owner') return children
     }
     return children
 }
