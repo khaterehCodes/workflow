@@ -41,9 +41,7 @@ export const statusStyles = {
   "Actif": "text-[#9A3412] bg-[#FFEDD5]",
   "Inactif": "text-[#991B1B] bg-[#FEE2E2]",
 
-    "Validé": "text-[#166534] bg-[#DCFCE7]",
-    "Actif": "text-[#9A3412] bg-[#FFEDD5]",
-    "Inactif": "text-[#991B1B] bg-[#FEE2E2]",
+  
 
 };
 export const fields = [
