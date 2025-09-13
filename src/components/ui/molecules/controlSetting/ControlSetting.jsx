@@ -15,7 +15,7 @@ function ControlSetting() {
     const [openModal, setOpenModal] = useState(false)
     return (
         <div className='w-full h-auto  flex flex-col items-center'>
-            <div className="w-[1300px] h-[390px] flex flex-col items-center bg-white rounded-[12px]">
+            <div className="w-[1230px] h-[390px] flex flex-col items-center bg-white rounded-[12px]">
                 <div className="w-[1200px] h-[40px] flex items-center justify-between m-[10px]">
                     <H2>Liste des brigades</H2>
                     <Button onClick={() => setOpenModal(true)}
@@ -49,11 +49,11 @@ function ControlSetting() {
                 <ControleModal openModal={openModal} setOpenModal={setOpenModal} />
             </div>
             <div className='w-full h-[600px]'>
-                <div className='w-[1300px] h-[550px] flex items-center justify-between'>
-                    <div className='w-[640px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
+                <div className='w-[1230px] h-[550px] flex items-center justify-between'>
+                    <div className='w-[610px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
                         <ControleGroups/>
                     </div>
-                    <div className='w-[640px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
+                    <div className='w-[610px] h-[520px] bg-white rounded-[12px] flex flex-col p-5'>
                         <DutyList/>
                     </div>
                 </div>

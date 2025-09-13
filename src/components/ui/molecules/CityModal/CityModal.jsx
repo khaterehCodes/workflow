@@ -4,17 +4,19 @@ import InputField from "../InputField/InputField";
 import H1 from "../../atoms/customH1/H1";
 import Button from "../../atoms/customButton/Button";
 
-const fields = [
-  { label: "Libellé", name: "name", type: "text", required: true },
-];
+const fields = [{ label: "Libellé", name: "name", type: "text", required: true },];
 
 function CityModal({ setOpenModal, initialValues, onSave }) {
-  const [formData, setFormData] = useState({ name: "", description: "",});
+  const [formData, setFormData] = useState({ name: "", description: "", });
   const isEdit = Boolean(initialValues?.id);
+  console.log(isEdit);
+  
   useEffect(() => {
     if (initialValues) {
-      setFormData({ name: initialValues.name || "",
-        description: initialValues.description || "",});
+      setFormData({
+        name: initialValues.name || "",
+        description: initialValues.description || "",
+      });
     }
   }, [initialValues]);
 
@@ -54,7 +56,7 @@ function CityModal({ setOpenModal, initialValues, onSave }) {
 
           <div className="flex flex-col w-[1040px]">
             <label className="mb-2 text-[16px] font-normal text-black">Description</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} className="border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px]"/>
+            <textarea name="description" value={formData.description} onChange={handleChange} className="border border-gray-300 border-dashed rounded-[10px] px-3 py-2 resize-none h-[200px]" />
             <span className="min-h-[20px] block" />
           </div>
 

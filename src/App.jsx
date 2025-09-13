@@ -33,9 +33,7 @@ function App() {
                 <UserListPage />
               </ProtectedRoute>
             } />
-            <Route path="/base" element={<ProtectedRoute role={'editor'}>
-              <BasePage />
-            </ProtectedRoute>} />
+            <Route path="/base" element={<BasePage />} />
             <Route path="/controle" element={<ControlePage />} />
             <Route path='/signup' element={
               <AuthCheck>

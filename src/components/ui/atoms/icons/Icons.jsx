@@ -97,23 +97,23 @@ function Icons({ name }) {
             </svg>;
         case 'removeIcon':
             return <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.59985 5H3.59985H19.5999" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M6.59985 5V3C6.59985 2.46957 6.81057 1.96086 7.18564 1.58579C7.56071 1.21071 8.06942 1 8.59985 1H12.5999C13.1303 1 13.639 1.21071 14.0141 1.58579C14.3891 1.96086 14.5999 2.46957 14.5999 3V5M17.5999 5V19C17.5999 19.5304 17.3891 20.0391 17.0141 20.4142C16.639 20.7893 16.1303 21 15.5999 21H5.59985C5.06942 21 4.56071 20.7893 4.18564 20.4142C3.81057 20.0391 3.59985 19.5304 3.59985 19V5H17.5999Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M8.59985 10V16" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12.5999 10V16" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M1.59985 5H3.59985H19.5999" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M6.59985 5V3C6.59985 2.46957 6.81057 1.96086 7.18564 1.58579C7.56071 1.21071 8.06942 1 8.59985 1H12.5999C13.1303 1 13.639 1.21071 14.0141 1.58579C14.3891 1.96086 14.5999 2.46957 14.5999 3V5M17.5999 5V19C17.5999 19.5304 17.3891 20.0391 17.0141 20.4142C16.639 20.7893 16.1303 21 15.5999 21H5.59985C5.06942 21 4.56071 20.7893 4.18564 20.4142C3.81057 20.0391 3.59985 19.5304 3.59985 19V5H17.5999Z" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8.59985 10V16" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12.5999 10V16" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>;
         case 'editIcon':
             return <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.5999 18.5605H19.5999" stroke="#5C73DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M15.0999 2.06077C15.4977 1.66295 16.0372 1.43945 16.5999 1.43945C16.8784 1.43945 17.1543 1.49432 17.4116 1.60093C17.669 1.70754 17.9029 1.86379 18.0999 2.06077C18.2968 2.25776 18.4531 2.49161 18.5597 2.74898C18.6663 3.00635 18.7212 3.2822 18.7212 3.56077C18.7212 3.83935 18.6663 4.1152 18.5597 4.37257C18.4531 4.62994 18.2968 4.86379 18.0999 5.06077L5.59985 17.5608L1.59985 18.5608L2.59985 14.5608L15.0999 2.06077Z" stroke="#5C73DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.5999 18.5605H19.5999" stroke="#5C73DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M15.0999 2.06077C15.4977 1.66295 16.0372 1.43945 16.5999 1.43945C16.8784 1.43945 17.1543 1.49432 17.4116 1.60093C17.669 1.70754 17.9029 1.86379 18.0999 2.06077C18.2968 2.25776 18.4531 2.49161 18.5597 2.74898C18.6663 3.00635 18.7212 3.2822 18.7212 3.56077C18.7212 3.83935 18.6663 4.1152 18.5597 4.37257C18.4531 4.62994 18.2968 4.86379 18.0999 5.06077L5.59985 17.5608L1.59985 18.5608L2.59985 14.5608L15.0999 2.06077Z" stroke="#5C73DB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>;
         case 'perviousPaginate':
             return <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.70711 0.292893C6.09763 0.683417 6.09763 1.31658 5.70711 1.70711L2.41421 5L5.70711 8.29289C6.09763 8.68342 6.09763 9.31658 5.70711 9.70711C5.31658 10.0976 4.68342 10.0976 4.29289 9.70711L0.292893 5.70711C-0.0976311 5.31658 -0.0976311 4.68342 0.292893 4.29289L4.29289 0.292893C4.68342 -0.0976311 5.31658 -0.0976311 5.70711 0.292893Z" fill="#71717A" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M5.70711 0.292893C6.09763 0.683417 6.09763 1.31658 5.70711 1.70711L2.41421 5L5.70711 8.29289C6.09763 8.68342 6.09763 9.31658 5.70711 9.70711C5.31658 10.0976 4.68342 10.0976 4.29289 9.70711L0.292893 5.70711C-0.0976311 5.31658 -0.0976311 4.68342 0.292893 4.29289L4.29289 0.292893C4.68342 -0.0976311 5.31658 -0.0976311 5.70711 0.292893Z" fill="#71717A" />
             </svg>;
         case 'nextPaginate':
             return <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292894 9.70711C-0.0976307 9.31658 -0.0976307 8.68342 0.292894 8.29289L3.58579 5L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292894C0.683417 -0.0976312 1.31658 -0.0976312 1.70711 0.292894L5.70711 4.29289C6.09763 4.68342 6.09763 5.31658 5.70711 5.70711L1.70711 9.70711C1.31658 10.0976 0.683418 10.0976 0.292894 9.70711Z" fill="#71717A" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M0.292894 9.70711C-0.0976307 9.31658 -0.0976307 8.68342 0.292894 8.29289L3.58579 5L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292894C0.683417 -0.0976312 1.31658 -0.0976312 1.70711 0.292894L5.70711 4.29289C6.09763 4.68342 6.09763 5.31658 5.70711 5.70711L1.70711 9.70711C1.31658 10.0976 0.683418 10.0976 0.292894 9.70711Z" fill="#71717A" />
             </svg>;
         case 'removeHover':
             return <svg width="76" height="36" viewBox="0 0 76 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@ function Icons({ name }) {
             </svg>;
         case 'arrowDown':
             return <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 1L6 6L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11 1L6 6L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>;
         case 'calendar':
             return <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

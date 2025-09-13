@@ -10,19 +10,15 @@ function EditUsersPage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
-
     const editingUser = location.state?.user;
     const isEdit = Boolean(editingUser);
-
     const initialValues = editingUser || { id: "", email: "", telephone: "", noms: "", prenoms: "", dateCreation: "", dateDerniereConnexion: "", statut: "Validé"};
-
     const handleSubmit = (values) => {
         const userToSave = {
             ...values,
             id: isEdit ? values.id : nanoid(),
             statut: "Validé"
-        };
-
+        }
         if (isEdit) {
             dispatch(updateItem({ key: "users", item: userToSave }));
         } else {
@@ -32,16 +28,11 @@ function EditUsersPage() {
         navigate("/");
     };
 
-    const {
-        values, errors, touched,
-        handleChange, handleBlur, handleSubmit: formikSubmit,
-        isSubmitting, isSubmitDisabled,
-    } = useUserForm({ initialValues, onSubmit: handleSubmit, isEdit });
-
+    const {values, errors, touched,handleChange, handleBlur, handleSubmit: formikSubmit,isSubmitting, isSubmitDisabled, } = useUserForm({ initialValues, onSubmit: handleSubmit, isEdit });
     return (
         <div>
-            <h1 className="text-black ml-16 text-[32px] font-semibold mb-4">Configuration</h1>
-            <div className="p-6 w-[1104px] h-[598px] mx-auto bg-white rounded-[12px] shadow flex flex-col">
+            <h1 className="text-black ml-5 text-[32px] font-semibold mb-4">Configuration</h1>
+            <div className="p-6 w-[1190px] h-[598px] mx-auto bg-white rounded-[12px] shadow flex flex-col">
                 <p className="text-[#27272A] text-[18px] mb-6">{isEdit ? "Editer un compte" : "Ajouter un utilisateur"}</p>
                 <form onSubmit={formikSubmit} className="grid grid-cols-2 font-normal text-[16px] gap-x-4 gap-y-6 flex-1 overflow-y-auto">
                     {fields.map(({ label, name, type = "text" }) => (

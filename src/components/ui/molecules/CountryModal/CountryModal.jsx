@@ -12,11 +12,7 @@ const fields = [
 ];
 function CountryModal({ setOpenModal, initialValues }) {
   const dispatch = useDispatch();
-  const defaultValues = {
-    libelle: "",
-    codeISO: "",
-    description: "",
-  };
+  const defaultValues = { libelle: "", codeISO: "", description: "", };
   const isEdit = Boolean(initialValues?.id);
   const handleSubmit = (values) => {
     const countryToSave = isEdit ? values : { ...values, id: nanoid() };

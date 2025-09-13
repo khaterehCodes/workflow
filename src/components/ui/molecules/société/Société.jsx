@@ -17,7 +17,7 @@ function Société() {
     const [searchValue, setSearchValue] = useState('');
     const filterSearchItems = items.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()));
     return (
-        <div className="w-[1300px] h-[690px] flex flex-col items-center bg-white rounded-[12px]">
+        <div className="w-[1230px] h-[690px] flex flex-col items-center bg-white rounded-[12px]">
             <div className="w-[1200px] h-[40px] flex items-center justify-between m-[10px]">
                 <H2>Liste des sociétés</H2>
                 <Button onClick={() => setOpenModal(true)}

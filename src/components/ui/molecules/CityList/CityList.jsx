@@ -41,8 +41,7 @@ function CityList() {
                     showAdd={false}
                     size="s" />
             </td>
-        </>
-    );
+        </>);
 
     return (
         <div className="bg-white p-6 w-[590px] h-[505px] mt-5 ml-5 rounded-[12px] ">
