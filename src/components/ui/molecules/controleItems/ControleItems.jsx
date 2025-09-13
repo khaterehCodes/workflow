@@ -1,14 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import Button from '../../atoms/customButton/Button';
 import { removeUser } from '../../../../core/redux/feature/ControleSet';
-function ControleItems() {
-    const controle = useSelector(state => state.controle)
+function ControleItems({items}) {
     const dispatch = useDispatch();
     return (
         <div className='w-[1200px] h-auto'>
-            {controle.map((item) => (
+            {items.map((item) => (
                 <React.Fragment key={item.id}>
                     <div className='w-[1200px] h-[50px] flex items-center justify-around text-[14px] text-[#27272A]'>
                         <div className='w-[342px] h-[50px]'>

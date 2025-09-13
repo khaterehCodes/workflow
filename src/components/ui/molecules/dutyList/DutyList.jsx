@@ -25,8 +25,8 @@ function DutyList() {
                 <Icons name={'search'} />
                 <Input
                     value={searchValue}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    placeholder={'Vous cherchez une méthode dévaluation ...'} className='w-[300px] ml-[15px]' />
+                    onChange={(e)=>setSearchValue(e.target.value)}
+                    placeholder={'Vous cherchez une méthode dévaluation ...'} className='w-[300px] ml-[15px] outline-none'/>
             </div>
             <div className='w-[590px] h-[45px] flex justify-around text-[#A1A1AA] items-center mt-[20px]'>
                 {controlSettingTabs.map((item, index) => (
